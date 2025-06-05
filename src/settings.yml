@@ -22,31 +22,31 @@ custom_fields:
   placeholder: Link to your RSS / XML Feed
   default: https://cdn.flore.nz/example_feed.xml
 - keyname: display_mode_full
-  name: (FULL) Layout Mode
+  name: "(FULL) Layout Mode"
   description: For Feature Grid - the feed items should have a thumbnail value attribute
   field_type: select
   options:
   - Feature Grid: grid
   - List: list
-  - Hybrid : grid_list
+  - Hybrid: grid_list
   default: grid_list
 - keyname: display_mode_half
-  name: (MEDIUM) Layout Mode
+  name: "(MEDIUM) Layout Mode"
   description: For Feature Grid - the feed items should have a thumbnail value attribute
   field_type: select
   options:
   - Feature Grid: grid
   - List: list
-  - Hybrid : grid_list
-  default: list 
+  - Hybrid: grid_list
+  default: list
 - keyname: display_mode_small
-  name: (SMALL) Layout Mode
+  name: "(SMALL) Layout Mode"
   description: For Feature Grid - the feed items should have a thumbnail value attribute
   field_type: select
   options:
   - Feature Grid: grid
   - List: list
-  default: list 
+  default: list
 - keyname: show_images_full
   description: Show images if available, affects list and grid view
   name: "(FULL) Show images if available"
@@ -92,7 +92,7 @@ custom_fields:
   - false
   default: false
 - keyname: show_title_bar
-  name: "Show titlebar"
+  name: Show titlebar
   field_type: select
   options:
   - true
