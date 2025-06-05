@@ -31,6 +31,7 @@ custom_fields:
   - Hybrid : grid_list
   default: grid_list
 - keyname: show_images_full
+  description: Show images if available, affects list and grid view
   name: "(FULL) Show images if available"
   field_type: select
   options:
@@ -39,6 +40,7 @@ custom_fields:
   default: true
 - keyname: show_description_full
   name: "(FULL) Show description if available"
+  description: Show feed item description if available, affects list and grid view
   field_type: select
   options:
   - true
