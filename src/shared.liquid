@@ -62,9 +62,9 @@
       <div class="description clamp--3" data-content-limiter="true">
 
         {% if description %}
-        {{ description |  strip_html  }}
+          {{ description |  strip_html  }}
         {% else if body %}
-        {{ body | strip_html }}
+          {{ body | strip_html }}
         {% else %}
         no content given
         {% endif %}

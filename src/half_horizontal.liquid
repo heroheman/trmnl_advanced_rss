@@ -21,9 +21,9 @@
           {% 
           render "media_item", 
           title: item.title, 
-          image: item.thumbnail,
+          image: item.media_thumbnail_url,
           description: item.description,
-          body: item.content
+          body: item.content_encoded
           show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_medium
           show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium
           %}
