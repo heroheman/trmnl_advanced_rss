@@ -9,6 +9,7 @@ watch:
 # values of custom fields (defined in src/settings.yml)
 custom_fields: {
   rss_url: "https://cdn.flore.nz/example_feed.xml",
+  display_mode_full: "grid",
   show_images_full: "true",
   show_images_small: "false",
   show_images_medium: "false",
@@ -19,3 +20,4 @@ custom_fields: {
 # override variables
 variables:
   trmnl: {}
+
