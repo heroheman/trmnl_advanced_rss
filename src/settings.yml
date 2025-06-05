@@ -74,5 +74,12 @@ custom_fields:
   - true
   - false
   default: false
+- keyname: show_title_bar
+  name: "Show titlebar"
+  field_type: select
+  options:
+  - true
+  - false
+  default: true
 name: 'Advanced RSS '
 refresh_interval: 1440

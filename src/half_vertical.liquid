@@ -39,4 +39,6 @@
 
 {% endif %}
 
-{% render "title_bar" image: feed.image, title: feed.title %}
+{% if  trmnl.plugin_settings.custom_fields_values.show_title_bar == true %}
+{% render "title_bar" image: feed.image, title: title, description: description %}
+{% endif %}

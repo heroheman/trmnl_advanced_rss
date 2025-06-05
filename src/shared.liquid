@@ -12,166 +12,150 @@
 </style>
 
 {% template media_item_large %}
-{% if image != '' %}
-<div class="media-item--large {{ cssClasses }}">
-
-  <div class="relative">
-    <div class="h--36 mb--2">
-      <img class="feature-image image-dither" src="{{ image }}" >
-    </div>
-    <span class="title title--small mb--2 clamp--3 absolute text-stroke text-stroke--large" 
-      style="bottom: 0; left: 8px; right: 4px; display: inline;"
-      data-pixel-perfect="true">
-      {{ title }} 
-    </span>
-  </div>
-
+  {% if image != '' %}
+    <div class="media-item--large {{ cssClasses }}">
+      <div class="relative">
+        <div class="h--36 mb--2">
+          <img class="feature-image image-dither" src="{{ image }}">
+        </div>
+        <span class="title title--small mb--2 clamp--3 absolute text-stroke text-stroke--large"
+          style="bottom: 0; left: 8px; right: 4px; display: inline;"
+          data-pixel-perfect="true">
+          {{ title }}
+        </span>
+      </div>
   {% else %}
-
-  <span class="title title--small mb--2 clamp--4" 
-    data-pixel-perfect="true">
-    {{ title }} 
-  </span>
+      <span class="title title--small mb--2 clamp--4"
+        data-pixel-perfect="true">
+        {{ title }}
+      </span>
   {% endif %}
 
-  <span class="text--left description clamp--12" >
-    {% if description %}
-    {{ description | strip_html | strip_newlines}}
-    {% else %}
-    {{ content  | strip_html | strip_newlines}}
-    {% endif %}
-  </span> 
-
-</div>
-
+      <span class="text--left description clamp--12">
+        {% if description %}
+          {{ description | strip_html | strip_newlines }}
+        {% else %}
+          {{ content | strip_html | strip_newlines }}
+        {% endif %}
+      </span>
+    </div>
 {% endtemplate %}
 
 {% template media_item_cover %}
-{% if image && image != '' %}
-{% assign image_available = true %}
-{% else %}
-{% assign image_available = false %}
-{% endif %}
+  {% if image && image != '' %}
+    {% assign image_available = true %}
+  {% else %}
+    {% assign image_available = false %}
+  {% endif %}
 
-<div class="media-item--cover w--full {{ cssClasses }}">
-  <div class="relative">
-    {% if image_available %}
-    <div class="h--48">
-      <img class="cover-image image-dither" src="{{ image }}" >
-    </div>
-    {% else %}
-    <div class="h--48 w--full image-border">
-    </div>
-    {% endif %}
-    <div class="absolute" 
-      style="bottom: 8px; left: 8px; right: 4px;;"
-      >
-      <span class="title title--small mb--2 clamp--7 
-      {% if show_description %}
-      clamp--3
-      {% else %}
-      clamp--7
-      {% endif %}
+  <div class="media-item--cover w--full {{ cssClasses }}">
+    <div class="relative">
       {% if image_available %}
-       text--white text-stroke text-stroke text-stroke--black{% endif %}" 
-
-        data-pixel-perfect="true"
-        >
-        {{ title }} 
-      </span>
-      {% if show_description %}
-      <span class="text--left description clamp--4 
-      {% if image_available %}
-      text--white text-stroke text-stroke--black {% endif %}" 
-        >
-        {% if description %}
-        {{ description | strip_html | strip_newlines}}
-        {% else %}
-        {{ content  | strip_html | strip_newlines}}
-        {% endif %}
-      </span> 
-      {% endif %}
-    </div>
-  </div>
-</div>
-{% endtemplate %}
-
-
-{% template media_item %}
-{% if image && image != '' %}
-{% assign image_available = true %}
-{% else %}
-{% assign image_available = false %}
-{% endif %}
-<div class="item {{ cssClasses }}">
-  <div class="flex flex--row flex--top">
-    {% if show_thumb == true && image_available == true %}
-    <div class="h--12">
-      {% if image_available %}
-      <img class="w--20 h--auto thumb-image image-dither" src="{{image}}">
+        <div class="h--48">
+          <img class="cover-image image-dither" src="{{ image }}">
+        </div>
       {% else %}
-      <img class="image w--20 h--8" src="https://usetrmnl.com/images/plugins/rss.svg" >
+        <div class="h--48 w--full image-border"></div>
       {% endif %}
-    </div>
-    {% else %}
-    <img class="image w--8 h--8" src="https://usetrmnl.com/images/plugins/rss.svg" >
-    {% endif %}
-    <div class="content w--auto">
-      {% if show_description == true %}
-      <div class="title title--small clamp--1">{{title}}</div>
-      {% else %}
-      <div class="title title--small clamp--3">{{title}}</div>
-      {% endif %}
-
-      {% if show_description == true %}
-      <div class="description clamp--3" data-content-limiter="true">
-
-        {% if description %}
-        {{ description |  strip_html  }}
-        {% else if body %}
-        {{ body | strip_html }}
-        {% else %}
-        no content given
+      <div class="absolute"
+        style="bottom: 8px; left: 8px; right: 4px;">
+        <span class="title title--small mb--2
+          {% if show_description %}
+            clamp--3
+          {% else %}
+            clamp--7
+          {% endif %}
+          {% if image_available %}
+            text--white text-stroke text-stroke text-stroke--black
+          {% endif %}"
+          data-pixel-perfect="true">
+          {{ title }}
+        </span>
+        {% if show_description %}
+          <span class="text--left description clamp--4
+            {% if image_available %}
+              text--white text-stroke text-stroke--black
+            {% endif %}">
+            {% if description %}
+              {{ description | strip_html | strip_newlines }}
+            {% else %}
+              {{ content | strip_html | strip_newlines }}
+            {% endif %}
+          </span>
         {% endif %}
       </div>
-      {% endif %}
-
     </div>
   </div>
-</div>
+{% endtemplate %}
+
+{% template media_item %}
+  {% if image && image != '' %}
+    {% assign image_available = true %}
+  {% else %}
+    {% assign image_available = false %}
+  {% endif %}
+  <div class="item {{ cssClasses }}">
+    <div class="flex flex--row flex--top">
+      {% if show_thumb == true && image_available == true %}
+        <div class="h--12">
+          {% if image_available %}
+            <img class="w--20 h--auto thumb-image image-dither" src="{{ image }}">
+          {% else %}
+            <img class="image w--20 h--8" src="https://usetrmnl.com/images/plugins/rss.svg">
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="content w--auto">
+        {% if show_description == true %}
+          <div class="title title--small clamp--1">{{ title }}</div>
+        {% else %}
+          <div class="title title--small clamp--3">{{ title }}</div>
+        {% endif %}
+
+        {% if show_description == true %}
+          <div class="description clamp--3" data-content-limiter="true">
+            {% if description %}
+              {{ description | strip_html }}
+            {% else if body %}
+              {{ body | strip_html }}
+            {% else %}
+              no content given
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
 {% endtemplate %}
 
 {% template error_msg %}
-<div class="layout layout--col">
-  <span class=title>
-    {{ message }}
-  </span>
-  <span class=description>
-    {{ url }}
-  </span>
-</div>
+  <div class="layout layout--col">
+    <span class="title">
+      {{ message }}
+    </span>
+    <span class="description">
+      {{ url }}
+    </span>
+  </div>
 {% endtemplate %}
 
-{% template title_bar%}
-<div class="title_bar">
-  {% if image && image != '' %}
-  <img class="image" src="{{ image }}" >
-  {% else %}
-  <img class="image" src="https://usetrmnl.com/images/plugins/trmnl--render.svg" >
-  {% endif %}
-  <span class="title">{{ title  }}</span>
-  {% if title %}
-  <span class="instance">{{ description | truncate: 40 }}</span>
-  {% else %}
-  <span class="instance">{{ description }}</span>
-  {% endif %}
-</div>
+{% template title_bar %}
+  <div class="title_bar">
+    {% if image && image != '' %}
+      <img class="image" src="{{ image }}">
+    {% else %}
+      <img class="image" src="https://usetrmnl.com/images/plugins/trmnl--render.svg">
+    {% endif %}
+    <span class="title">{{ title }}</span>
+    {% if title %}
+      <span class="instance">{{ description | truncate: 40 }}</span>
+    {% else %}
+      <span class="instance">{{ description }}</span>
+    {% endif %}
+  </div>
 {% endtemplate %}
-
-
-
 
 <!-- shared markup -->
 {% template say_hello %}
-Hello there, {{ name }}.
+  Hello there, {{ name }}.
 {% endtemplate %}
