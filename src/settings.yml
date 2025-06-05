@@ -30,6 +30,23 @@ custom_fields:
   - List: list
   - Hybrid : grid_list
   default: grid_list
+- keyname: display_mode_half
+  name: (MEDIUM) Layout Mode
+  description: For Feature Grid - the feed items should have a thumbnail value attribute
+  field_type: select
+  options:
+  - Feature Grid: grid
+  - List: list
+  - Hybrid : grid_list
+  default: list 
+- keyname: display_mode_small
+  name: (SMALL) Layout Mode
+  description: For Feature Grid - the feed items should have a thumbnail value attribute
+  field_type: select
+  options:
+  - Feature Grid: grid
+  - List: list
+  default: list 
 - keyname: show_images_full
   description: Show images if available, affects list and grid view
   name: "(FULL) Show images if available"

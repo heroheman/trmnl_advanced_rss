@@ -1,44 +1,62 @@
 {% if status == 'error' %}
-<div class="layout layout--col">
-  <span class=title>
-    {{ message }}
-  </span>
-  <span class=description>
-    {{ trmnl.plugin_settings.polling_url | json }}
-  </span>
-</div>
+  <div class="layout layout--col">
+    <span class="title">
+      {{ message }}
+    </span>
+    <span class="description">
+      {{ trmnl.plugin_settings.polling_url | json }}
+    </span>
+  </div>
 {% else %}
 
+  {% case trmnl.plugin_settings.custom_fields_values.display_mode_small %}
 
-<div class="layout layout--no-bleed">
-  <div class="columns">
-    
-    <div class="column">
-      <div class="p--2">
-
-        <div class="list" data-list-limit="true" data-list-max-height="200" data-list-hidden-count="false" data-list-max-columns="1">
-          {% for item in items limit:3 %}
-          {% 
-          render "media_item", 
-          title: item.title, 
-          image: item.media_thumbnail_url,
-          description: item.description,
-          body: item.content_encoded
-          show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_small
-          show_description: trmnl.plugin_settings.custom_fields_values.show_description_small
-          %}
-
-          {% endfor %}
-
+    {% when 'grid' %}
+      <div class="layout layout--no-bleed">
+        <div class="grid grid--col">
+          <div class="col col--start col--span-2">
+            <div class="grid gap--small mb--2">
+                {% for item in items limit:1 %}
+                  {% render "media_item_cover", 
+                    title: item.title, 
+                    image: item.media_thumbnail_url,
+                    description: item.description,
+                    show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_small,
+                    show_description: trmnl.plugin_settings.custom_fields_values.show_description_small,
+                    body: item.content_encoded
+                  %}
+                {% endfor %}
+              </div>
+             
+          </div>
         </div>
-
       </div>
-    </div>
-  </div>
-</div>
+
+    {% else %}
+      <div class="layout layout--no-bleed">
+        <div class="columns">
+          <div class="column">
+            <div class="p--2">
+              <div class="list" data-list-limit="true" data-list-max-height="170" data-list-hidden-count="false" data-list-max-columns="1">
+                {% for item in items limit:10 %}
+                  {% render "media_item", 
+                    title: item.title, 
+                    image: item.media_thumbnail_url,
+                    description: item.description,
+                    body: item.content_encoded,
+                    show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_small,
+                    show_description: trmnl.plugin_settings.custom_fields_values.show_description_small
+                  %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  {% endcase %}
 
 {% endif %}
 
-{% if  trmnl.plugin_settings.custom_fields_values.show_title_bar == true %}
-{% render "title_bar" image: feed.image, title: title, description: description %}
+{% if trmnl.plugin_settings.custom_fields_values.show_title_bar == true %}
+  {% render "title_bar", image: feed.image, title: title, description: description %}
 {% endif %}
