@@ -49,11 +49,32 @@ url: trmnl.plugin_settings.custom_fields_values.rss_url
   </div>
 </div>
 {% when 'list'%}
-todo: default
+<div class="layout layout--no-bleed">
+  <div class="grid">
+
+    <div class="list" data-list-limit="true" 
+      data-list-max-height="370" 
+      data-list-hidden-count="true"
+      data-list-max-columns="2">
+
+      {% for item in items limit:20 %}
+      {% 
+      render "media_item", 
+      cssClasses: "pr--4",
+      title: item.title, 
+      image: item.media_thumbnail_url,
+      description: item.description,
+      body: item.content
+      show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full
+      show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
+      %}
+      {% endfor %}
+    
+    </div>
+  </div>
+</div>
 
 {% when 'grid'%}
-
-
 <div class="layout layout--col layout--no-bleed">
   <div class="grid gap--small">
 
