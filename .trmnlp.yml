@@ -10,12 +10,12 @@ watch:
 custom_fields: {
   rss_url: "https://cdn.flore.nz/example_feed.xml",
   display_mode_full: "grid",
-  show_images_full: "true",
-  show_images_small: "false",
-  show_images_medium: "false",
-  show_description_full: "true",
-  show_description_small: "false",
-  show_description_medium: "true"}
+  show_images_full: true,
+  show_images_small: false,
+  show_images_medium: false,
+  show_description_full: false,
+  show_description_small: false,
+  show_description_medium: true}
 
 # override variables
 variables:
