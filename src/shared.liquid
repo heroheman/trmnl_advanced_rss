@@ -1,0 +1,102 @@
+<!-- shared markup -->
+<style>
+  .feature-image { object-fit: cover; width: 100%;  max-height: 100%; }
+  .thumb-image { object-fit: cover; width: 100%;  max-height: 100%;}
+  .absolute { position: absolute; }
+  .relative { position: relative; }
+</style>
+
+{% template media_item_large %}
+{% if image != '' %}
+
+<div class="relative">
+  <div class="h--36 mb--2">
+    <img class="feature-image image-dither" src="{{ image }}" >
+  </div>
+  <span class="title title--small mb--2 clamp--3 absolute text-stroke text-stroke--large" 
+    style="bottom: 0; left: 8px; right: 4px; display: inline;"
+    data-pixel-perfect="true">
+    {{ title }} 
+  </span>
+</div>
+
+{% else %}
+
+<span class="title title--small mb--2 clamp--4" 
+  data-pixel-perfect="true">
+  {{ title }} 
+</span>
+{% endif %}
+
+<span class="text--left description clamp--12" >
+  {% if description %}
+  {{ description | strip_html | strip_newlines}}
+  {% else %}
+  {{ content  | strip_html | strip_newlines}}
+  {% endif %}
+</span> 
+
+{% endtemplate %}
+
+
+{% template media_item %}
+<div class="item">
+  <div class="flex flex--row flex--top">
+    {% if show_thumb == 'true' %}
+      {% if image != ''%}
+      <div class="h--12">
+        <img class="w--20 h--auto thumb-image image-dither" src="{{image}}">
+      </div>
+      {% else %}
+      <img class="image w--8 h--8" src="https://usetrmnl.com/images/plugins/rss.svg" >
+      {% endif %}
+    {% endif %}
+    <div class="content w--auto">
+      {% if show_description == 'true' %}
+      <div class="title title--small clamp--1">{{title}}</div>
+      {% else %}
+      <div class="title title--small clamp--3">{{title}}</div>
+      {% endif %}
+
+      {% if show_description == 'true' %}
+      <div class="description clamp--3" data-content-limiter="true">
+
+        {% if description %}
+        {{ description |  strip_html  }}
+        {% else if body %}
+        {{ body | strip_html }}
+        {% else %}
+        no content given
+        {% endif %}
+      </div>
+      {% endif %}
+
+    </div>
+    <div class="border--h-7"></div>
+  </div>
+</div>
+{% endtemplate %}
+
+{% template title_bar%}
+<div class="title_bar">
+  {% if image != '' %}
+    <img class="image" src="{{ image }}" >
+  {% else %}
+    <img class="image" src="https://usetrmnl.com/images/plugins/trmnl--render.svg" >
+  {% endif %}
+  <span class="title">{{ title  }}</span>
+  {% if title %}
+  <span class="instance">{{ description | truncate: 40 }}</span>
+  {% else %}
+  <span class="instance">{{ description }}</span>
+  {% endif %}
+</div>
+{% endtemplate %}
+
+
+
+
+<!-- shared markup -->
+{% template say_hello %}
+Hello there, {{ name }}.
+{% endtemplate %}

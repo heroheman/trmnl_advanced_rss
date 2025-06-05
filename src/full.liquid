@@ -1,0 +1,53 @@
+{% if status == 'error' %}
+<div class="layout layout--col">
+  <span class=title>
+    {{ message }}
+  </span>
+  <span class=description>
+    {{ trmnl.plugin_settings.polling_url | json }}
+  </span>
+</div>
+{% else %}
+
+
+<div class="layout layout--no-bleed">
+  <div class="grid">
+    <div class="col col--start col--span-2">
+      <div class="p--2">
+        {% for item in items limit:1 %}
+        {% 
+        render "media_item_large" 
+        title: item.title, 
+        image: item.thumbnail,
+        description: item.description,
+        body: item.content
+        %}
+        {% endfor %}
+      </div>
+
+    </div>
+    <div class="col col--start col--span-3">
+      <div class="p--2">
+
+        <div class="list" data-list-limit="true" data-list-max-height="370" data-list-hidden-count="true" data-list-max-columns="1">
+          {% for item in items limit:5 offset:1 %}
+          {% 
+          render "media_item", 
+          title: item.title, 
+          image: item.thumbnail,
+          description: item.description,
+          body: item.content
+          show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full
+          show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
+          %}
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endif %}
+
+{% render "title_bar" image: feed.image, title: feed.title, description: feed.description %}

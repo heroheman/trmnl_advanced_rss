@@ -1,0 +1,68 @@
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+# polling_url: https://api.rss2json.com/v1/api.json?rss_url={{ rss_url }}
+polling_url: https://rsstojson-lake.vercel.app/api/rss?url=https://cdn.flore.nz/example_feed.xml
+polling_headers: ''
+id: 79118
+custom_fields:
+- keyname: author_bio
+  name: About This Plugin
+  field_type: author_bio
+  description: Advanced RSS Plugin with Thumbnail Support and various settings for adjusting the content display
+  github_url: https://github.com/heroheman
+  learn_more_url: https://flore.nz
+  email_address: moin@flore.nz
+- keyname: rss_url
+  field_type: string
+  name: RSS Feed
+  description: Enter your RSS Feed URL
+  placeholder: Link to your RSS / XML Feed
+  default: https://cdn.flore.nz/example_feed.xml
+- keyname: show_images_full
+  name: "(FULL) Show images if available"
+  field_type: select
+  options:
+  - true
+  - false
+  default: true
+- keyname: show_description_full
+  name: "(FULL) Show description if available"
+  field_type: select
+  options:
+  - true
+  - false
+  default: true
+- keyname: show_images_medium
+  name: "(MEDIUM) Show images if available"
+  field_type: select
+  options:
+  - true
+  - false
+  default: false
+- keyname: show_description_medium
+  name: "(MEDIUM) Show description if available"
+  field_type: select
+  options:
+  - true
+  - false
+  default: true
+- keyname: show_images_small
+  name: "(SMALL) Show images if available"
+  field_type: select
+  options:
+  - true
+  - false
+  default: false
+- keyname: show_description_small
+  name: "(SMALL) Show description if available"
+  field_type: select
+  options:
+  - true
+  - false
+  default: false
+name: 'Advanced RSS '
+refresh_interval: 1440
