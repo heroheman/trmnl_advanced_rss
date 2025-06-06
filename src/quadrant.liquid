@@ -19,7 +19,7 @@
                 {% for item in items limit:1 %}
                   {% render "media_item_cover", 
                     title: item.title, 
-                    image: item.media_thumbnail_url,
+                    image: item.preview_url
                     description: item.description,
                     show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_small,
                     show_description: trmnl.plugin_settings.custom_fields_values.show_description_small,
@@ -41,7 +41,7 @@
                 {% for item in items limit:10 %}
                   {% render "media_item", 
                     title: item.title, 
-                    image: item.media_thumbnail_url,
+                    image: item.preview_url
                     description: item.description,
                     body: item.content_encoded,
                     show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_small,

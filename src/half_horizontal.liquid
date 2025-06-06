@@ -19,7 +19,7 @@
               {% render "media_item_cover", 
                 title: item.title, 
                 cssClasses: "mb--4",
-                image: item.media_thumbnail_url,
+                image: item.preview_url
                 description: item.description,
                 show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_medium,
                 show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium,
@@ -32,7 +32,7 @@
               {% for item in items limit:1 offset:1 %}
                 {% render "media_item", 
                   title: item.title, 
-                  image: item.media_thumbnail_url,
+                  image: item.preview_url
                   description: item.description,
                   body: item.content_encoded,
                   show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_medium,
@@ -53,7 +53,7 @@
                 {% for item in items limit:1 %}
                   {% render "media_item_cover", 
                     title: item.title, 
-                    image: item.media_thumbnail_url,
+                    image: item.preview_url
                     description: item.description,
                     show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_medium,
                     show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium,
@@ -65,7 +65,7 @@
                 {% for item in items offset:1 limit:1 %}
                   {% render "media_item_cover", 
                     title: item.title, 
-                    image: item.media_thumbnail_url,
+                    image: item.preview_url
                     description: item.description,
                     show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium,
                     body: item.content_encoded
@@ -86,7 +86,7 @@
                 {% for item in items limit:4 %}
                   {% render "media_item", 
                     title: item.title, 
-                    image: item.media_thumbnail_url,
+                    image: item.preview_url
                     description: item.description,
                     body: item.content_encoded,
                     show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_medium,

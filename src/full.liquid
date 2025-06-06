@@ -14,7 +14,7 @@
               {% render "media_item_cover" 
                 title: item.title, 
                 cssClasses: "mb--4",
-                image: item.media_thumbnail_url,
+                image: item.preview_url
                 description: item.description,
                 show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
                 show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
@@ -24,7 +24,7 @@
             {% for item in items offset:1 limit:1 %}
               {% render "media_item_cover" 
                 title: item.title, 
-                image: item.media_thumbnail_url,
+                image: item.preview_url
                 description: item.description,
                 show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
                 show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
@@ -38,7 +38,7 @@
                 {% for item in items limit:5 offset:2 %}
                   {% render "media_item", 
                     title: item.title, 
-                    image: item.media_thumbnail_url,
+                    image: item.preview_url
                     description: item.description,
                     body: item.content,
                     show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
@@ -62,7 +62,7 @@
               {% render "media_item", 
                 cssClasses: "pr--4",
                 title: item.title, 
-                image: item.media_thumbnail_url,
+                image: item.preview_url
                 description: item.description,
                 body: item.content,
                 show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
@@ -80,7 +80,7 @@
             {% for item in items limit:1 %}
               {% render "media_item_cover" 
                 title: item.title, 
-                image: item.media_thumbnail_url,
+                image: item.preview_url
                 description: item.description,
                 show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
                 show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
@@ -92,7 +92,7 @@
             {% for item in items offset:1 limit:1 %}
               {% render "media_item_cover" 
                 title: item.title, 
-                image: item.media_thumbnail_url,
+                image: item.preview_url,
                 description: item.description,
                 show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
                 body: item.content_encoded
@@ -105,10 +105,11 @@
             {% for item in items offset:2 limit:1 %}
               {% render "media_item_cover" 
                 title: item.title, 
-                image: item.media_thumbnail_url,
+                image: item.preview_url
                 description: item.description,
                 show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded
+                body: item.content_encoded,
+                rawItem: rawItem
               %}
             {% endfor %}
           </div>
@@ -116,7 +117,7 @@
             {% for item in items offset:3 limit:1 %}
               {% render "media_item_cover" 
                 title: item.title, 
-                image: item.media_thumbnail_url,
+                image: item.preview_url
                 description: item.description,
                 show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
                 body: item.content_encoded
@@ -127,7 +128,7 @@
             {% for item in items offset:4 limit:1 %}
               {% render "media_item_cover" 
                 title: item.title, 
-                image: item.media_thumbnail_url,
+                image: item.preview_url,
                 description: item.description,
                 show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
                 body: item.content_encoded
