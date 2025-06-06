@@ -139,7 +139,49 @@
       </div>
 
     {% else %}
-      {# No display mode matched #}
+      <div class="layout layout--no-bleed">
+        <div class="grid">
+          <div class="col col--start col--span-2">
+            {% for item in items limit:1 %}
+              {% render "media_item_cover" 
+                title: item.title, 
+                cssClasses: "mb--4",
+                image: item.preview_url
+                description: item.description,
+                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
+                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
+                body: item.content
+              %}
+            {% endfor %}
+            {% for item in items offset:1 limit:1 %}
+              {% render "media_item_cover" 
+                title: item.title, 
+                image: item.preview_url
+                description: item.description,
+                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
+                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
+                body: item.content
+              %}
+            {% endfor %}
+          </div>
+          <div class="col col--start col--span-2">
+            <div class="pl--2">
+              <div class="list" data-list-limit="true" data-list-max-height="370" data-list-hidden-count="true" data-list-max-columns="1">
+                {% for item in items limit:5 offset:2 %}
+                  {% render "media_item", 
+                    title: item.title, 
+                    image: item.preview_url
+                    description: item.description,
+                    body: item.content,
+                    show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
+                    show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
+                  %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   {% endcase %}
 {% endif %}
 
