@@ -9,9 +9,11 @@ watch:
 # values of custom fields (defined in src/settings.yml)
 custom_fields: {
   rss_url: "https://cdn.flore.nz/example_feed.xml",
-  display_mode_full: "grid_list", # grid, list, grid_list
+  # rss_url: "https://flore.nz/feed.xml",
+  # rss_url: "https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml",
+  display_mode_full: "grid", # grid, list, grid_list
   display_mode_half: "grid", # grid, list, grid_list
-  display_mode_small: "list", # grid, list, grid_list
+  display_mode_small: "grid", # grid, list
   show_images_full: true,
   show_images_medium: true,
   show_images_small: false,
