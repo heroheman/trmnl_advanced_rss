@@ -1,26 +1,26 @@
 # Advanced RSS Plugin for TRMNL
-Advanced RSS Plugin with Thumbnail Support and various settings for adjusting the content display. _Version v0.1.0_.
 
-- https://usetrmnl.com/recipes/79118/
-- [Changelog](https://github.com/heroheman/trmnl_advanced_rss/blob/main/CHANGELOG.md)
+A sophisticated RSS feed display plugin for TRMNL e-ink devices that transforms your favorite RSS feeds into beautifully formatted, customizable layouts. This plugin goes beyond basic RSS display by offering multiple layout options, thumbnail support, and granular control over content presentation.
+
+## ✨ Key Features
+
+- **6 Distinct Layout Modes**: From compact lists to elegant grids, choose the perfect layout for your content
+- **Smart Image Handling**: Optional thumbnail display with intelligent fallbacks
+- **Flexible Content Display**: Toggle descriptions, customize text clipping, and control information density  
+- **Screen-Optimized**: Layouts specifically designed for 800x480 e-ink displays
+- **Responsive Design**: Adapts to different content types and feed structures
+- **Easy Configuration**: Simple settings to match your personal preferences
+
+**Version:** v0.3.0 | [**Recipe:**](https://usetrmnl.com/recipes/79118/) | **Changelog:** [View Updates](https://github.com/heroheman/trmnl_advanced_rss/blob/main/CHANGELOG.md)
 
 ## Example Layouts with applied options
-![Layout: Grid, Show Images, Show Description](screenshots/full_grid_images.jpg)
-Layout: Grid, Show Images, Show Description
-![Layout: Grid, No Images, Show Description](screenshots/full_grid_no-images.jpg)
-Layout: Grid, No Images, Show Description
-![Layout: Grid, No Images, No Description](screenshots/full_grid_no-images_no-description.jpg)
-Layout: Grid, No Images, No Description
-![Layout: Grid 2, Show Images, No Description](screenshots/full_grid-2_no-description.jpg)
-Layout: Grid 2, Show Images, No Description
-![Layout: Grid 3, Show Images, No Description](screenshots/full_grid_3_no-description.jpg)
-Layout: Grid 3, Show Images, No Description
-![Layout: Grid 4, Show Images, No Description](screenshots/full_grid_4_no-description.jpg)
-Layout: Grid 4, Show Images, No Description
-![Layout: List, Show Images](screenshots/full_list_images.jpg)
-Layout: List, Show Images
-![Layout: list, No Images](screenshots/full_list_no-images.jpg)
-Layout: List, No Images
+
+| Layout | Layout |
+|--------|--------|
+| ![Layout: Grid, Show Images, Show Description](screenshots/full_grid_images.jpg)<br>**Grid:** Show Images, Show Description | ![Layout: Grid, No Images, Show Description](screenshots/full_grid_no-images.jpg)<br>**Grid:** No Images, Show Description |
+| ![Layout: Grid, No Images, No Description](screenshots/full_grid_no-images_no-description.jpg)<br>**Grid:** No Images, No Description | ![Layout: Grid 2, Show Images, No Description](screenshots/full_grid-2_no-description.jpg)<br>**Grid 2:** Show Images, No Description |
+| ![Layout: Grid 3, Show Images, No Description](screenshots/full_grid_3_no-description.jpg)<br>**Grid 3:** Show Images, No Description | ![Layout: Grid 4, Show Images, No Description](screenshots/full_grid_4_no-description.jpg)<br>**Grid 4:** Show Images, No Description |
+| ![Layout: List, Show Images](screenshots/full_list_images.jpg)<br>**List:** Show Images | ![Layout: List, No Images](screenshots/full_list_no-images.jpg)<br>**List:** No Images |
 
 _Screenshots taken inside trmnlp and in *v0.3.0* - there might be changes_
 
@@ -38,8 +38,10 @@ _Screenshots taken inside trmnlp and in *v0.3.0* - there might be changes_
 
 #### Design Framework
 - https://usetrmnl.com/framework
+
 #### Template Language: 
 - https://shopify.github.io/liquid/
 - https://help.usetrmnl.com/en/articles/10347358-custom-plugin-filters
+
 #### Javascript
 - https://help.usetrmnl.com/en/articles/10693981-advanced-liquid
