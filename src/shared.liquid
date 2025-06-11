@@ -60,7 +60,7 @@
 
   <div class="media-item--cover w--full overflow-hidden {{ cssClasses }}">
     <div class="relative">
-      {% if image_available %}
+      {% if show_thumb && image_available %}
         <div class="h--48 image-overlay">
           <img class="cover-image image-dither" src="{{ image }}">
         </div>
@@ -70,14 +70,14 @@
       <div class="absolute"
         style="bottom: 4px; left: 8px; right: 4px;">
         <span 
-        style="line-height: 1.4; display: inline-block;"
+        style="line-height: 1.4; display: inline-block; width: 100%;"
         class="title title--small mb--2
           {% if show_description %}
             clamp--3
           {% else %}
             clamp--7
           {% endif %}
-          {% if image_available %}
+          {% if show_thumb && image_available %}
             text--white text-stroke text-stroke text-stroke--black
           {% endif %}"
           data-pixel-perfect="true"
@@ -86,7 +86,7 @@
         </span>
         {% if show_description %}
           <span class="text--left description clamp--3
-            {% if image_available %}
+            {% if show_thumb && image_available %}
               text--white text-stroke text-stroke--black
           data-pixel-perfect="true"
             {% endif %}">
@@ -163,7 +163,7 @@
     {% if image && image != '' %}
       <img class="image" src="{{ image }}">
     {% else %}
-      <img class="image" src="https://usetrmnl.com/images/plugins/trmnl--render.svg">
+      <img class="image" src="https://usetrmnl.com/images/plugins/rss.svg">
     {% endif %}
     <span class="title">{{ title }}</span>
     {% if title %}
