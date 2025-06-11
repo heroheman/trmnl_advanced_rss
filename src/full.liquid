@@ -4,15 +4,16 @@
     url: trmnl.plugin_settings.custom_fields_values.rss_url
   %}
 {% else %}
-    {% assign random_items = items | %}
-  {% case trmnl.plugin_settings.custom_fields_values.display_mode_full %}    {% when 'grid_list' %}
+    {% assign random_items = items | %}  {% case trmnl.plugin_settings.custom_fields_values.display_mode_full %}
+
+    {% when 'grid_list' %}
+      {% comment %} Hybrid layout: 2 featured items on left, compact list on right (shows 7 items total) {% endcomment %}
       {% render "layout_grid_list" 
         items: items,
         show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
         show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
-      %}
-
-    {% when 'list' %}
+      %}    {% when 'list' %}
+      {% comment %} Simple vertical list with optional images and descriptions (shows up to 20 items) {% endcomment %}
       <div class="layout screen--no-bleed">
         <div class="grid">
           <div class="list" data-list-limit="true" 
@@ -33,9 +34,10 @@
             {% endfor %}
           </div>
         </div>
-      </div>
-
-    {% when 'grid' %}
+      </div>    
+      
+      {% when 'grid' %}
+      {% comment %} Mixed grid layout: 2 featured items on top row, 3 equal items on bottom row (shows 5 items total) {% endcomment %}
       {% comment %} 2/1 1/1/1 {% endcomment %}
       <div class="layout layout--col screen--no-bleed">
         <div class="grid gap--small">
@@ -103,9 +105,10 @@
             {% endfor %}
           </div>
         </div>
-      </div>
-
-    {% when 'grid_2' %}
+      </div>    
+      
+      {% when 'grid_2' %}
+      {% comment %} Balanced 2x2 grid layout: asymmetric top row, asymmetric bottom row (shows 4 items total) {% endcomment %}
       {% comment %} 2/1 2/1 {% endcomment %}
       <div class="layout layout--col screen--no-bleed">
         <div class="grid gap--small">
@@ -162,9 +165,10 @@
             {% endfor %}
           </div>
         </div>
-      </div>
-
-    {% when 'grid_3' %}
+      </div>    
+      
+      {% when 'grid_3' %}
+      {% comment %} Symmetric 3x2 grid layout: 3 equal items on top row, 3 equal items on bottom row (shows 6 items total) {% endcomment %}
       {% comment %} 2/1 1/1/1 {% endcomment %}
       <div class="layout layout--col screen--no-bleed">
         <div class="grid gap--small">
@@ -195,9 +199,10 @@
           </div>
           {% endfor %}
         </div>
-      </div>        
+      </div>            
 
       {% when 'grid_4' %}
+      {% comment %} Perfect 2x2 grid layout: optimized for small screens, equal-sized quadrants (shows 4 items total) {% endcomment %}
       {% comment %} 2x2 grid layout {% endcomment %}
       <div class="layout layout--col screen--no-bleed">
         {% comment %} Top row: 2 equal columns {% endcomment %}
@@ -231,8 +236,11 @@
           </div>
           {% endfor %}
         </div>
-      </div>    {% else %}
-      {% render "layout_grid_list" 
+      </div>    
+      
+      {% else %}
+      {% comment %} Default fallback layout: same as grid_list - hybrid layout with featured items and list {% endcomment %}
+      {% render "layout_grid_list"
         items: items,
         show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
         show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
