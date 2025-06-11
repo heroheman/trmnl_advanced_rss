@@ -1,6 +1,6 @@
-# Advanced RSS Plugin for TRMNL
+# Advanced RSS Plugin for TRMNL Display
 
-A sophisticated RSS feed display plugin for TRMNL e-ink devices that transforms your favorite RSS feeds into beautifully formatted, customizable layouts. This plugin goes beyond basic RSS display by offering multiple layout options, thumbnail support, and granular control over content presentation.
+A sophisticated RSS feed display plugin for [TRMNL](https://usetrmnl.com) e-ink devices that transforms your favorite RSS feeds into beautifully formatted, customizable layouts. This plugin goes beyond basic RSS display by offering multiple layout options, thumbnail support, and granular control over content presentation.
 
 ## ✨ Key Features
 
@@ -13,9 +13,9 @@ A sophisticated RSS feed display plugin for TRMNL e-ink devices that transforms 
 
 **Version:** v0.3.0 | [**Recipe:**](https://usetrmnl.com/recipes/79118/) | **Changelog:** [View Updates](https://github.com/heroheman/trmnl_advanced_rss/blob/main/CHANGELOG.md)
 
-## Example Layouts with applied options
+## 🏞️ Example Layouts with applied options
 
-| Layout | Layout |
+| Layout ||
 |--------|--------|
 | ![Layout: Grid, Show Images, Show Description](screenshots/full_grid_images.jpg)<br>**Grid:** Show Images, Show Description | ![Layout: Grid, No Images, Show Description](screenshots/full_grid_no-images.jpg)<br>**Grid:** No Images, Show Description |
 | ![Layout: Grid, No Images, No Description](screenshots/full_grid_no-images_no-description.jpg)<br>**Grid:** No Images, No Description | ![Layout: Grid 2, Show Images, No Description](screenshots/full_grid-2_no-description.jpg)<br>**Grid 2:** Show Images, No Description |
