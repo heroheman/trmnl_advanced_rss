@@ -4,6 +4,7 @@
     url: trmnl.plugin_settings.custom_fields_values.rss_url
   %}
 {% else %}
+    {% assign random_items = items | %}
   {% case trmnl.plugin_settings.custom_fields_values.display_mode_full %}
 
     {% when 'grid_list' %}
@@ -76,6 +77,7 @@
       </div>
 
     {% when 'grid' %}
+      {% comment %} 2/1 1/1/1 {% endcomment %}
       <div class="layout layout--col screen--no-bleed">
         <div class="grid gap--small">
           <div class="col--span-2">
@@ -134,6 +136,65 @@
               {% render "media_item_cover" 
                 title: item.title, 
                 image: item.preview_url,
+                description: item.description,
+                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
+                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
+                body: item.content_encoded
+              %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+    {% when 'grid_2' %}
+      {% comment %} 2/1 2/1 {% endcomment %}
+      <div class="layout layout--col screen--no-bleed">
+        <div class="grid gap--small">
+          <div class="col--span-2">
+            {% for item in items limit:1 %}
+              {% render "media_item_cover" 
+                title: item.title, 
+                image: item.preview_url
+                description: item.description,
+                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
+                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
+                body: item.content_encoded
+              %}
+            {% endfor %}
+          </div>
+          <div class="col--span-3">
+            {% for item in items offset:1 limit:1 %}
+              {% render "media_item_cover" 
+                title: item.title, 
+                image: item.preview_url,
+                description: item.description,
+                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
+                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
+                body: item.content_encoded
+              %}
+            {% endfor %}
+          </div>
+        </div>
+        {% comment %} bottom half {% endcomment %}
+        <div class="grid gap">
+          <div class="col--span-3">
+            {% for item in items offset:2 limit:1 %}
+              {% render "media_item_cover" 
+                title: item.title, 
+                image: item.preview_url
+                description: item.description,
+                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
+                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
+                body: item.content_encoded,
+                rawItem: rawItem
+              %}
+            {% endfor %}
+          </div>
+          <div class="col--span-2">
+            {% for item in items offset:3 limit:1 %}
+              {% render "media_item_cover" 
+                title: item.title, 
+                image: item.preview_url
                 description: item.description,
                 show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
                 show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,

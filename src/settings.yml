@@ -27,6 +27,7 @@ custom_fields:
   field_type: select
   options:
   - Feature Grid: grid
+  - Feature Grid: grid_2
   - List: list
   - Hybrid: grid_list
   default: grid_list
