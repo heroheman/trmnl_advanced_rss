@@ -109,6 +109,11 @@
     {% assign image_available = false %}
   {% endif %}
   <div class="item {{ cssClasses }}">
+    {% if show_thumb == false %}
+    <div class="meta">
+      <span class="index">{{index}}</span>
+    </div>
+    {% endif  %}
     <div class="flex flex--row flex--top">
       {% if show_thumb == true && image_available == true %}
         <div class="h--12">

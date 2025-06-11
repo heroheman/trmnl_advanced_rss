@@ -41,6 +41,7 @@
                     image: item.preview_url
                     description: item.description,
                     body: item.content,
+                    index: forloop.index, 
                     show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
                     show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
                   %}
@@ -64,6 +65,7 @@
                 title: item.title, 
                 image: item.preview_url
                 description: item.description,
+                index: forloop.index, 
                 body: item.content,
                 show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
                 show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
@@ -172,6 +174,7 @@
                     title: item.title, 
                     image: item.preview_url
                     description: item.description,
+                    index: forloop.index, 
                     body: item.content,
                     show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
                     show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
