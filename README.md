@@ -6,15 +6,23 @@ Advanced RSS Plugin with Thumbnail Support and various settings for adjusting th
 
 ## Example Layouts with applied options
 ![Layout: Grid, Show Images, Show Description](screenshots/full_grid_images.jpg)
+Layout: Grid, Show Images, Show Description
 ![Layout: Grid, No Images, Show Description](screenshots/full_grid_no-images.jpg)
+Layout: Grid, No Images, Show Description
 ![Layout: Grid, No Images, No Description](screenshots/full_grid_no-images_no-description.jpg)
+Layout: Grid, No Images, No Description
 ![Layout: Grid 2, Show Images, No Description](screenshots/full_grid-2_no-description.jpg)
+Layout: Grid 2, Show Images, No Description
 ![Layout: Grid 3, Show Images, No Description](screenshots/full_grid_3_no-description.jpg)
+Layout: Grid 3, Show Images, No Description
 ![Layout: Grid 4, Show Images, No Description](screenshots/full_grid_4_no-description.jpg)
+Layout: Grid 4, Show Images, No Description
 ![Layout: List, Show Images](screenshots/full_list_images.jpg)
+Layout: List, Show Images
 ![Layout: list, No Images](screenshots/full_list_no-images.jpg)
+Layout: List, No Images
 
-_Screenshots taken in *v0.2.2* - there might be changes_
+_Screenshots taken inside trmnlp and in *v0.3.0* - there might be changes_
 
 ## Links
 
