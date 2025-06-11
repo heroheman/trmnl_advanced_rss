@@ -29,6 +29,7 @@ custom_fields:
   - Grid Layout 1 (5 items): grid
   - Grid Layout 2 (4 items): grid_2
   - Grid Layout 3 (6 items): grid_3
+  - Grid Layout 4 (4 items): grid_4
   - List Layout: list
   - Hybrid Layout: grid_list
   default: grid_list
