@@ -13,6 +13,15 @@ A sophisticated RSS feed display plugin for [TRMNL](https://usetrmnl.com) e-ink 
 
 **Version:** v0.3.0 | [**Recipe:**](https://usetrmnl.com/recipes/79118/) | **Changelog:** [View Updates](https://github.com/heroheman/trmnl_advanced_rss/blob/main/CHANGELOG.md)
 
+### How to install
+
+1. [Fork Recipe](https://usetrmnl.com/recipes/79118/install) to your TRMNL 
+2. Add your RSS Feed, adjust the settings, set the refresh rate to whatever suits you best.
+3. Add it to your Playlist and Mashups
+
+### How to update:
+*Important*: As this plugin has custom fields, it can only be forked. This means that it does not automatically update itself when a new version is available, but must be forked again.
+
 ## 🏞️ Example Layouts with applied options
 
 | Layout ||
