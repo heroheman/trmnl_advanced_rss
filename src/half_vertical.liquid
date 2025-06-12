@@ -14,8 +14,7 @@
     {% when 'grid_list' %}
       <div class="layout">
         <div class="grid">
-          <div class="col">
-            {% for item in items limit:1 %}
+          <div class="col">            {% for item in items limit:1 %}
               {% render "media_item_cover", 
                 title: item.title, 
                 cssClasses: "mb--4",
@@ -23,12 +22,13 @@
                 description: item.description,
                 show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
                 show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded
+                body: item.content_encoded,
+                pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+                pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
               %}
             {% endfor %}
 
-            <div class="list" data-list-limit="true" data-list-max-height="230" data-list-hidden-count="false" data-list-max-columns="1">
-              {% for item in items limit:6 offset:1 %}
+            <div class="list" data-list-limit="true" data-list-max-height="230" data-list-hidden-count="false" data-list-max-columns="1">              {% for item in items limit:6 offset:1 %}
                 {% render "media_item", 
                   cssClasses: "mb--2",
                   title: item.title, 
@@ -36,7 +36,9 @@
                   description: item.description,
                   body: item.content_encoded,
                   show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_medium,
-                  show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium
+                  show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium,
+                  pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+                  pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
                 %}
               {% endfor %}
             </div>
@@ -48,27 +50,29 @@
       <div class="layout layout--no-bleed">
         <div class="grid grid--col">
           <div class="col col--start col--span-2">
-            <div class="grid gap--small mb--2">
-                {% for item in items limit:1 %}
+            <div class="grid gap--small mb--2">                {% for item in items limit:1 %}
                   {% render "media_item_cover", 
                     title: item.title, 
                     image: item.preview_url
                     description: item.description,
                     show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
                     show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                    body: item.content_encoded
+                    body: item.content_encoded,
+                    pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+                    pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
                   %}
                 {% endfor %}
               </div>
-              <div class="col--span-3">
-                {% for item in items offset:1 limit:1 %}
+              <div class="col--span-3">                {% for item in items offset:1 limit:1 %}
                   {% render "media_item_cover", 
                     title: item.title, 
                     image: item.preview_url
                     description: item.description,
                     show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
                     show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                    body: item.content_encoded
+                    body: item.content_encoded,
+                    pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+                    pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
                   %}
                 {% endfor %}
               </div>
@@ -81,8 +85,7 @@
         <div class="columns">
           <div class="column">
             <div class="p--2">
-              <div class="list" data-list-limit="true" data-list-max-height="390" data-list-hidden-count="false" data-list-max-columns="1">
-                {% for item in items limit:10 %}
+              <div class="list" data-list-limit="true" data-list-max-height="390" data-list-hidden-count="false" data-list-max-columns="1">                {% for item in items limit:10 %}
                   {% render "media_item", 
                     title: item.title, 
                     image: item.preview_url
@@ -90,7 +93,9 @@
                     index: forloop.index, 
                     body: item.content_encoded,
                     show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_medium,
-                    show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium
+                    show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium,
+                    pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+                    pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
                   %}
                 {% endfor %}
               </div>

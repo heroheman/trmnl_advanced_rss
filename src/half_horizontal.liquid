@@ -14,7 +14,7 @@
     {% when 'grid_list' %}
       <div class="layout layout--no-bleed">
         <div class="grid">
-          <div class="col">
+          <div class="col">            
             {% for item in items limit:1 %}
               {% render "media_item_cover", 
                 title: item.title, 
@@ -23,12 +23,14 @@
                 description: item.description,
                 show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_medium,
                 show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium,
-                body: item.content_encoded
+                body: item.content_encoded,
+                pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+                pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
               %}
             {% endfor %}
           </div>
           <div class="col col--start">
-            <div class="list" data-list-limit="true" data-list-max-height="200" data-list-hidden-count="false" data-list-max-columns="1">
+            <div class="list" data-list-limit="true" data-list-max-height="200" data-list-hidden-count="false" data-list-max-columns="1">              
               {% for item in items limit:1 offset:1 %}
                 {% render "media_item", 
                   title: item.title, 
@@ -37,7 +39,9 @@
                   index: forloop.index, 
                   body: item.content_encoded,
                   show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_medium,
-                  show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium
+                  show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium,
+                  pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+                  pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
                 %}
               {% endfor %}
             </div>
@@ -50,7 +54,7 @@
         <div class="grid">
           <div class="col col--start col--span-2">
             <div class="grid gap--small mb--2">
-              <div class="col--span-2">
+              <div class="col--span-2">                
                 {% for item in items limit:1 %}
                   {% render "media_item_cover", 
                     title: item.title, 
@@ -58,11 +62,13 @@
                     description: item.description,
                     show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_medium,
                     show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium,
-                    body: item.content_encoded
+                    body: item.content_encoded,
+                    pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+                    pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
                   %}
                 {% endfor %}
               </div>
-              <div class="col--span-3">
+              <div class="col--span-3">                
                 {% for item in items offset:1 limit:1 %}
                   {% render "media_item_cover", 
                     title: item.title, 
@@ -70,7 +76,9 @@
                     description: item.description,
                     show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_medium,
                     show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium,
-                    body: item.content_encoded
+                    body: item.content_encoded,
+                    pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+                    pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
                   %}
                 {% endfor %}
               </div>
@@ -84,7 +92,7 @@
         <div class="columns">
           <div class="column">
             <div class="p--2">
-              <div class="list" data-list-limit="true" data-list-max-height="160" data-list-hidden-count="false" data-list-max-columns="2">
+              <div class="list" data-list-limit="true" data-list-max-height="160" data-list-hidden-count="false" data-list-max-columns="2">                
                 {% for item in items limit:4 %}
                   {% render "media_item", 
                     title: item.title, 
@@ -93,7 +101,9 @@
                     index: forloop.index, 
                     body: item.content_encoded,
                     show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_medium,
-                    show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium
+                    show_description: trmnl.plugin_settings.custom_fields_values.show_description_medium,
+                    pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+                    pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
                   %}
                   <div class="border--h-7"></div>
                 {% endfor %}
