@@ -11,7 +11,7 @@ custom_fields:
 - keyname: author_bio
   name: About This Plugin
   field_type: author_bio
-  description: v0.3.0 - 20250611 - Advanced RSS Plugin with Thumbnail Support and various settings for adjusting the content display. For changes and layout screenshots, please check changelog in the the GitHub repository.
+  description: v0.3.1 - 20250612 - Advanced RSS Plugin with Thumbnail Support and various settings for adjusting the content display. For changes and layout screenshots, please check changelog in the the GitHub repository.
   github_url: https://github.com/heroheman
   learn_more_url: https://github.com/heroheman/trmnl_advanced_rss
   email_address: moin@flore.nz
