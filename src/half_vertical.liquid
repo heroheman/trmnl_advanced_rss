@@ -102,6 +102,6 @@
 
 {% endif %}
 
-{% if trmnl.plugin_settings.custom_fields_values.show_title_bar == 'true' %}
+{% if trmnl.plugin_settings.custom_fields_values.show_title_bar %}
   {% render "title_bar", image: feed.image, title: title %}
 {% endif %}

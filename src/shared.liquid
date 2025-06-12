@@ -117,7 +117,7 @@
     </div>
     {% endif  %}
     <div class="flex flex--row flex--top">
-      {% if show_thumb == true && image_available == true %}
+      {% if show_thumb && image_available %}
         <div class="h--12">
           {% if image_available %}
             <img class="w--20 h--auto thumb-image image-dither" src="{{ image }}">
@@ -127,13 +127,13 @@
         </div>
       {% endif %}
       <div class="content w--auto">
-        {% if show_description == true %}
+        {% if show_description %}
           <div class="title title--small clamp--1">{{ title }}</div>
         {% else %}
           <div class="title title--small clamp--3">{{ title }}</div>
         {% endif %}
 
-        {% if show_description == true %}
+        {% if show_description %}
           <div class="description clamp--3" data-content-limiter="true">
             {% if description %}
               {{ description | strip_html }}
