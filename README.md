@@ -22,14 +22,15 @@ A sophisticated RSS feed display plugin for [TRMNL](https://usetrmnl.com) e-ink 
 ### How to update:
 *Important*: As this plugin has custom fields, it can only be forked. This means that it does not automatically update itself when a new version is available, but must be forked again.
 
-## 🏞️ Example Layouts with applied options
+## 🏞️ Example Layouts and applied options
 
 | Layout ||
 |--------|--------|
-| ![Layout: Grid, Show Images, Show Description](screenshots/full_grid_images.jpg)<br>**Grid:** Show Images, Show Description | ![Layout: Grid, No Images, Show Description](screenshots/full_grid_no-images.jpg)<br>**Grid:** No Images, Show Description |
-| ![Layout: Grid, No Images, No Description](screenshots/full_grid_no-images_no-description.jpg)<br>**Grid:** No Images, No Description | ![Layout: Grid 2, Show Images, No Description](screenshots/full_grid-2_no-description.jpg)<br>**Grid 2:** Show Images, No Description |
+| ![Layout: Grid 1, Show Images, Show Description](screenshots/full_grid_images.jpg)<br>**Grid:** Show Images, Show Description | ![Layout: Grid 2, Show Images, No Description](screenshots/full_grid-2_no-description.jpg)<br>**Grid 2:** Show Images, No Description |
 | ![Layout: Grid 3, Show Images, No Description](screenshots/full_grid_3_no-description.jpg)<br>**Grid 3:** Show Images, No Description | ![Layout: Grid 4, Show Images, No Description](screenshots/full_grid_4_no-description.jpg)<br>**Grid 4:** Show Images, No Description |
+| ![Layout: Grid, No Images, Show Description](screenshots/full_grid_no-images.jpg)<br>**Grid:** No Images, Show Description | ![Layout: Grid, No Images, No Description](screenshots/full_grid_no-images_no-description.jpg)<br>**Grid:** No Images, No Description |
 | ![Layout: List, Show Images](screenshots/full_list_images.jpg)<br>**List:** Show Images | ![Layout: List, No Images](screenshots/full_list_no-images.jpg)<br>**List:** No Images |
+| ![PixelPerfect On](screenshots/full_pixelperfect_on.jpg)<br>**PixelPerfect:** True | ![PixelPerfect Off](screenshots/full_pixelperfect_off.jpg)<br>**PixelPerfect:** false |
 
 _Screenshots taken inside trmnlp and in *v0.3.0* - there might be changes_
 
