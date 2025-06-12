@@ -26,12 +26,12 @@ custom_fields:
   description: For Feature Grid - the feed items should have a thumbnail value attribute
   field_type: select
   options:
-  - Grid Layout 1 (5 items): grid
-  - Grid Layout 2 (4 items): grid_2
-  - Grid Layout 3 (6 items): grid_3
-  - Grid Layout 4 (4 items): grid_4
-  - List Layout: list
-  - Hybrid Layout: grid_list
+  - Grid 1 - Mixed grid with 2 featured + 3 equal items (5 total) : grid
+  - Grid 2 - Balanced 2x2 asymmetric layout (4 items): grid_2
+  - Grid 3 - Symmetric 3x2 grid (6 items): grid_3
+  - Grid 4 - Perfect 2x2 grid (4 items): grid_4
+  - List - Simple vertical list (20 items): list
+  - Hybrid - Hybrid with featured items + compact list (5-7 items): grid_list
   default: grid_list
 - keyname: display_mode_half
   name: "(MEDIUM) Layout Mode"
