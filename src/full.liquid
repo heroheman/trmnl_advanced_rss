@@ -1,3 +1,275 @@
+{% template layout_list %}
+  <div class="layout screen--no-bleed">
+    <div class="grid">
+      <div class="list" data-list-limit="true" 
+        data-list-max-height="370" 
+        data-list-hidden-count="true"
+        data-list-max-columns="2">
+        {% for item in items limit:20 %}
+          {% render "media_item", 
+            cssClasses: "pr--4",
+            title: item.title, 
+            image: item.preview_url
+            description: item.description,
+            index: forloop.index, 
+            body: item.content,
+            show_thumb: show_images,
+            show_description: show_description
+          %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endtemplate %}
+
+{% template layout_grid %}
+  <div class="layout layout--col screen--no-bleed">
+    <div class="grid gap--small">
+      <div class="col--span-2">
+        {% for item in items limit:1 %}
+          {% render "media_item_cover" 
+            title: item.title, 
+            image: item.preview_url
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content_encoded
+          %}
+        {% endfor %}
+      </div>
+      <div class="col--span-3">
+        {% for item in items offset:1 limit:1 %}
+          {% render "media_item_cover" 
+            title: item.title, 
+            image: item.preview_url,
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content_encoded
+          %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="grid gap">
+      <div class="col--span-1">
+        {% for item in items offset:2 limit:1 %}
+          {% render "media_item_cover" 
+            title: item.title, 
+            image: item.preview_url
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content_encoded,
+            rawItem: rawItem
+          %}
+        {% endfor %}
+      </div>
+      <div class="col--span-1">
+        {% for item in items offset:3 limit:1 %}
+          {% render "media_item_cover" 
+            title: item.title, 
+            image: item.preview_url
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content_encoded
+          %}
+        {% endfor %}
+      </div>
+      <div class="col--span-1">
+        {% for item in items offset:4 limit:1 %}
+          {% render "media_item_cover" 
+            title: item.title, 
+            image: item.preview_url,
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content_encoded
+          %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endtemplate %}
+
+{% template layout_grid_2 %}
+  <div class="layout layout--col screen--no-bleed">
+    <div class="grid gap--small">
+      <div class="col--span-2">
+        {% for item in items limit:1 %}
+          {% render "media_item_cover" 
+            title: item.title, 
+            image: item.preview_url
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content_encoded
+          %}
+        {% endfor %}
+      </div>
+      <div class="col--span-3">
+        {% for item in items offset:1 limit:1 %}
+          {% render "media_item_cover" 
+            title: item.title, 
+            image: item.preview_url,
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content_encoded
+          %}
+        {% endfor %}
+      </div>
+    </div>
+    {% comment %} bottom half {% endcomment %}
+    <div class="grid gap">
+      <div class="col--span-3">
+        {% for item in items offset:2 limit:1 %}
+          {% render "media_item_cover" 
+            title: item.title, 
+            image: item.preview_url
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content_encoded,
+            rawItem: rawItem
+          %}
+        {% endfor %}
+      </div>
+      <div class="col--span-2">
+        {% for item in items offset:3 limit:1 %}
+          {% render "media_item_cover" 
+            title: item.title, 
+            image: item.preview_url
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content_encoded
+          %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endtemplate %}
+
+{% template layout_grid_3 %}
+  <div class="layout layout--col screen--no-bleed">
+    <div class="grid gap--small">
+      {% for item in items limit:3 %}
+      <div class="col--span-1">
+          {% render "media_item_cover" 
+            title: item.title, 
+            image: item.preview_url
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content_encoded
+          %}
+      </div>
+      {% endfor %}
+    </div>
+    <div class="grid gap">
+      {% for item in items offset:3 limit:3 %}
+      <div class="col--span-1">
+          {% render "media_item_cover" 
+            title: item.title, 
+            image: item.preview_url
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content_encoded
+          %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endtemplate %}
+
+{% template layout_grid_4 %}
+  <div class="layout layout--col screen--no-bleed">
+    {% comment %} Top row: 2 equal columns {% endcomment %}
+    <div class="grid gap">
+      {% for item in items limit:2 %}
+      <div class="col--span-2">
+          {% render "media_item_cover" 
+            title: item.title, 
+            image: item.preview_url,
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content_encoded
+          %}
+      </div>
+      {% endfor %}
+    </div>
+    
+    {% comment %} Bottom row: 2 equal columns {% endcomment %}
+    <div class="grid gap">
+      {% for item in items offset:2 limit:2 %}
+      <div class="col--span-2">
+          {% render "media_item_cover" 
+            title: item.title, 
+            image: item.preview_url,
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content_encoded
+          %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endtemplate %}
+
+{% template layout_grid_list %}
+  <div class="layout screen--no-bleed">
+    <div class="grid">
+      <div class="col col--start col--span-2">
+        {% for item in items limit:1 %}
+          {% render "media_item_cover" 
+            title: item.title, 
+            cssClasses: "mb--4",
+            image: item.preview_url
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content
+          %}
+        {% endfor %}
+        {% for item in items offset:1 limit:1 %}
+          {% render "media_item_cover" 
+            title: item.title, 
+            image: item.preview_url
+            description: item.description,
+            show_thumb: show_images,
+            show_description: show_description,
+            body: item.content
+          %}
+        {% endfor %}
+      </div>
+      <div class="col col--start col--span-2">
+        <div class="pl--2">
+          <div class="list" data-list-limit="true" data-list-max-height="370" data-list-hidden-count="true" data-list-max-columns="1">
+            {% for item in items limit:5 offset:2 %}
+              {% render "media_item", 
+                title: item.title, 
+                image: item.preview_url
+                description: item.description,
+                body: item.content,
+                index: forloop.index, 
+                show_thumb: show_images,
+                show_description: show_description
+              %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endtemplate %}
+
+
+
+
 {% if status == 'error' %}
   {% render "error_msg" 
     message: message,
@@ -12,231 +284,40 @@
         items: items,
         show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
         show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
-      %}    {% when 'list' %}
+      %}        {% when 'list' %}
       {% comment %} Simple vertical list with optional images and descriptions (shows up to 20 items) {% endcomment %}
-      <div class="layout screen--no-bleed">
-        <div class="grid">
-          <div class="list" data-list-limit="true" 
-            data-list-max-height="370" 
-            data-list-hidden-count="true"
-            data-list-max-columns="2">
-            {% for item in items limit:20 %}
-              {% render "media_item", 
-                cssClasses: "pr--4",
-                title: item.title, 
-                image: item.preview_url
-                description: item.description,
-                index: forloop.index, 
-                body: item.content,
-                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
-                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
-              %}
-            {% endfor %}
-          </div>
-        </div>
-      </div>    
-      
-      {% when 'grid' %}
+      {% render "layout_list" 
+        items: items,
+        show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
+        show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
+      %}
+        {% when 'grid' %}
       {% comment %} Mixed grid layout: 2 featured items on top row, 3 equal items on bottom row (shows 5 items total) {% endcomment %}
-      {% comment %} 2/1 1/1/1 {% endcomment %}
-      <div class="layout layout--col screen--no-bleed">
-        <div class="grid gap--small">
-          <div class="col--span-2">
-            {% for item in items limit:1 %}
-              {% render "media_item_cover" 
-                title: item.title, 
-                image: item.preview_url
-                description: item.description,
-                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
-                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded
-              %}
-            {% endfor %}
-          </div>
-          <div class="col--span-3">
-            {% for item in items offset:1 limit:1 %}
-              {% render "media_item_cover" 
-                title: item.title, 
-                image: item.preview_url,
-                description: item.description,
-                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
-                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded
-              %}
-            {% endfor %}
-          </div>
-        </div>
-        <div class="grid gap">
-          <div class="col--span-1">
-            {% for item in items offset:2 limit:1 %}
-              {% render "media_item_cover" 
-                title: item.title, 
-                image: item.preview_url
-                description: item.description,
-                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
-                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded,
-                rawItem: rawItem
-              %}
-            {% endfor %}
-          </div>
-          <div class="col--span-1">
-            {% for item in items offset:3 limit:1 %}
-              {% render "media_item_cover" 
-                title: item.title, 
-                image: item.preview_url
-                description: item.description,
-                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
-                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded
-              %}
-            {% endfor %}
-          </div>
-          <div class="col--span-1">
-            {% for item in items offset:4 limit:1 %}
-              {% render "media_item_cover" 
-                title: item.title, 
-                image: item.preview_url,
-                description: item.description,
-                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
-                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded
-              %}
-            {% endfor %}
-          </div>
-        </div>
-      </div>    
-      
-      {% when 'grid_2' %}
+      {% render "layout_grid" 
+        items: items,
+        show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
+        show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
+      %}
+        {% when 'grid_2' %}
       {% comment %} Balanced 2x2 grid layout: asymmetric top row, asymmetric bottom row (shows 4 items total) {% endcomment %}
-      {% comment %} 2/1 2/1 {% endcomment %}
-      <div class="layout layout--col screen--no-bleed">
-        <div class="grid gap--small">
-          <div class="col--span-2">
-            {% for item in items limit:1 %}
-              {% render "media_item_cover" 
-                title: item.title, 
-                image: item.preview_url
-                description: item.description,
-                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
-                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded
-              %}
-            {% endfor %}
-          </div>
-          <div class="col--span-3">
-            {% for item in items offset:1 limit:1 %}
-              {% render "media_item_cover" 
-                title: item.title, 
-                image: item.preview_url,
-                description: item.description,
-                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
-                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded
-              %}
-            {% endfor %}
-          </div>
-        </div>
-        {% comment %} bottom half {% endcomment %}
-        <div class="grid gap">
-          <div class="col--span-3">
-            {% for item in items offset:2 limit:1 %}
-              {% render "media_item_cover" 
-                title: item.title, 
-                image: item.preview_url
-                description: item.description,
-                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
-                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded,
-                rawItem: rawItem
-              %}
-            {% endfor %}
-          </div>
-          <div class="col--span-2">
-            {% for item in items offset:3 limit:1 %}
-              {% render "media_item_cover" 
-                title: item.title, 
-                image: item.preview_url
-                description: item.description,
-                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
-                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded
-              %}
-            {% endfor %}
-          </div>
-        </div>
-      </div>    
-      
-      {% when 'grid_3' %}
+      {% render "layout_grid_2" 
+        items: items,
+        show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
+        show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
+      %}
+        {% when 'grid_3' %}
       {% comment %} Symmetric 3x2 grid layout: 3 equal items on top row, 3 equal items on bottom row (shows 6 items total) {% endcomment %}
-      {% comment %} 2/1 1/1/1 {% endcomment %}
-      <div class="layout layout--col screen--no-bleed">
-        <div class="grid gap--small">
-          {% for item in items limit:3 %}
-          <div class="col--span-1">
-              {% render "media_item_cover" 
-                title: item.title, 
-                image: item.preview_url
-                description: item.description,
-                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
-                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded
-              %}
-          </div>
-          {% endfor %}
-        </div>
-        <div class="grid gap">
-          {% for item in items offset:3 limit:3 %}
-          <div class="col--span-1">
-              {% render "media_item_cover" 
-                title: item.title, 
-                image: item.preview_url
-                description: item.description,
-                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
-                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded
-              %}
-          </div>
-          {% endfor %}
-        </div>
-      </div>            
-
-      {% when 'grid_4' %}
+      {% render "layout_grid_3" 
+        items: items,
+        show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
+        show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
+      %}      {% when 'grid_4' %}
       {% comment %} Perfect 2x2 grid layout: optimized for small screens, equal-sized quadrants (shows 4 items total) {% endcomment %}
-      {% comment %} 2x2 grid layout {% endcomment %}
-      <div class="layout layout--col screen--no-bleed">
-        {% comment %} Top row: 2 equal columns {% endcomment %}
-        <div class="grid gap">
-          {% for item in items limit:2 %}
-          <div class="col--span-2">
-              {% render "media_item_cover" 
-                title: item.title, 
-                image: item.preview_url,
-                description: item.description,
-                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
-                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded
-              %}
-          </div>
-          {% endfor %}
-        </div>
-        
-        {% comment %} Bottom row: 2 equal columns {% endcomment %}
-        <div class="grid gap">
-          {% for item in items offset:2 limit:2 %}
-          <div class="col--span-2">
-              {% render "media_item_cover" 
-                title: item.title, 
-                image: item.preview_url,
-                description: item.description,
-                show_thumb: trmnl.plugin_settings.custom_fields_values.show_images_full,
-                show_description: trmnl.plugin_settings.custom_fields_values.show_description_full,
-                body: item.content_encoded
-              %}
-          </div>
-          {% endfor %}
-        </div>
-      </div>    
+      {% render "layout_grid_4" 
+        items: items,
+        show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
+        show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
+      %}
       
       {% else %}
       {% comment %} Default fallback layout: same as grid_list - hybrid layout with featured items and list {% endcomment %}
