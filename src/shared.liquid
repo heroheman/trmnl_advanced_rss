@@ -21,6 +21,16 @@
   .screen--no-bleed { padding: 0 !important; }
 
   .image-border { border: 1px solid black;}
+
+  .hyphens-auto {
+    hyphens: auto;
+    word-break: unset !important;
+  }
+
+  .title--xsmall {
+    font-family: NicoClean !important;
+    font-size: 14px !important;
+  }
 </style>
 
 {% template media_item_large %}
@@ -124,7 +134,7 @@
         {% endif %}
 
         {% if show_description %}
-          <div class="description clamp--3" data-content-limiter="true" {% if pixel_perfect_description %}data-pixel-perfect="true"{% endif %}>
+          <div class="description hyphens-auto clamp--3" data-content-limiter="true" {% if pixel_perfect_description %}data-pixel-perfect="true"{% endif %}>
             {% if description %}
               {{ description | strip_html }}
             {% else if body %}
