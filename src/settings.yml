@@ -26,7 +26,7 @@ custom_fields:
   description: For Feature Grid - the feed items should have a thumbnail value attribute
   field_type: select
   options:
-  - Grid 1 - Mixed grid with 2 featured + 3 equal items (5 total) : grid
+  - Grid 1 - Mixed grid with 2 featured + 3 equal items (5 total): grid
   - Grid 2 - Balanced 2x2 asymmetric layout (4 items): grid_2
   - Grid 3 - Symmetric 3x2 grid (6 items): grid_3
   - Grid 4 - Perfect 2x2 grid (4 items): grid_4
