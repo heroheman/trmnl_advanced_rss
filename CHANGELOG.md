@@ -7,22 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.3.1] - 2025-06-12
 
+### Added
+- Add pixel-perfect rendering options for titles and descriptions
+
 ### Changed
 
-- Update plugin version in author bio description
 - Enhance media item rendering and layout adjustments
 - Enhance pixel-perfect options in media item rendering
 - Update example layouts and add pixel-perfect screenshots
-- Enhance pixel-perfect rendering options for titles and descriptions
 - Streamline image availability checks in templates
 - Simplify show_title_bar conditionals
 - Move layout cases to templates
 - Update layout mode options in settings.yml for clarity
-- Enhance installation and update instructions in README
-- Update README for clarity and formatting improvements
-- Enhance README with detailed plugin description and features
-- Update example layouts and screenshot version in README
-- Changelog update
+
+### Fixed
+- Fix layout bug in half_horizontal layout
 
 ## [0.3.0] - 2025-06-11
 
