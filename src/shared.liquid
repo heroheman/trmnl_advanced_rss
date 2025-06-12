@@ -54,11 +54,7 @@
 {% endtemplate %}
 
 {% template media_item_cover %}
-  {% if image && image != '' %}
-    {% assign image_available = true %}
-  {% else %}
-    {% assign image_available = false %}
-  {% endif %}
+  {% assign image_available = image and image != '' %}
 
   <div class="media-item--cover w--full overflow-hidden {{ cssClasses }}">
     <div class="relative">
@@ -105,11 +101,7 @@
 {% endtemplate %}
 
 {% template media_item %}
-  {% if image && image != '' %}
-    {% assign image_available = true %}
-  {% else %}
-    {% assign image_available = false %}
-  {% endif %}
+  {% assign image_available = image and image != '' %}
   <div class="item {{ cssClasses }}">
     {% if show_thumb == false %}
     <div class="meta">
