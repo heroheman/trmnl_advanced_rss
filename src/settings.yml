@@ -101,5 +101,21 @@ custom_fields:
   - true
   - false
   default: true
+- keyname: title_pixel_perfect
+  name: "(GLOBAL) Use Pixel Perfect for titles"
+  description: This alters the text rendering of the titles, making it more visually appealing.
+  field_type: select
+  options:
+  - true
+  - false
+  default: true
+- keyname: description_pixel_perfect
+  name: "(GLOBAL) Use Pixel Perfect for descriptions"
+  description: This alters the text rendering of the description, making it more visually appealing.
+  field_type: select
+  options:
+  - true
+  - false
+  default: true
 name: 'Advanced RSS '
 refresh_interval: 1440

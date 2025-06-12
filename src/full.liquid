@@ -4,8 +4,7 @@
       <div class="list" data-list-limit="true" 
         data-list-max-height="370" 
         data-list-hidden-count="true"
-        data-list-max-columns="2">
-        {% for item in items limit:20 %}
+        data-list-max-columns="2">        {% for item in items limit:20 %}
           {% render "media_item", 
             cssClasses: "pr--4",
             title: item.title, 
@@ -14,7 +13,9 @@
             index: forloop.index, 
             body: item.content,
             show_thumb: show_images,
-            show_description: show_description
+            show_description: show_description,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
         {% endfor %}
       </div>
@@ -33,7 +34,9 @@
             description: item.description,
             show_thumb: show_images,
             show_description: show_description,
-            body: item.content_encoded
+            body: item.content_encoded,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
         {% endfor %}
       </div>
@@ -45,7 +48,9 @@
             description: item.description,
             show_thumb: show_images,
             show_description: show_description,
-            body: item.content_encoded
+            body: item.content_encoded,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
         {% endfor %}
       </div>
@@ -60,7 +65,9 @@
             show_thumb: show_images,
             show_description: show_description,
             body: item.content_encoded,
-            rawItem: rawItem
+            rawItem: rawItem,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
         {% endfor %}
       </div>
@@ -72,7 +79,9 @@
             description: item.description,
             show_thumb: show_images,
             show_description: show_description,
-            body: item.content_encoded
+            body: item.content_encoded,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
         {% endfor %}
       </div>
@@ -84,7 +93,9 @@
             description: item.description,
             show_thumb: show_images,
             show_description: show_description,
-            body: item.content_encoded
+            body: item.content_encoded,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
         {% endfor %}
       </div>
@@ -103,7 +114,9 @@
             description: item.description,
             show_thumb: show_images,
             show_description: show_description,
-            body: item.content_encoded
+            body: item.content_encoded,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
         {% endfor %}
       </div>
@@ -115,7 +128,9 @@
             description: item.description,
             show_thumb: show_images,
             show_description: show_description,
-            body: item.content_encoded
+            body: item.content_encoded,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
         {% endfor %}
       </div>
@@ -131,7 +146,9 @@
             show_thumb: show_images,
             show_description: show_description,
             body: item.content_encoded,
-            rawItem: rawItem
+            rawItem: rawItem,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
         {% endfor %}
       </div>
@@ -143,7 +160,9 @@
             description: item.description,
             show_thumb: show_images,
             show_description: show_description,
-            body: item.content_encoded
+            body: item.content_encoded,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
         {% endfor %}
       </div>
@@ -162,7 +181,9 @@
             description: item.description,
             show_thumb: show_images,
             show_description: show_description,
-            body: item.content_encoded
+            body: item.content_encoded,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
       </div>
       {% endfor %}
@@ -176,7 +197,9 @@
             description: item.description,
             show_thumb: show_images,
             show_description: show_description,
-            body: item.content_encoded
+            body: item.content_encoded,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
       </div>
       {% endfor %}
@@ -196,7 +219,9 @@
             description: item.description,
             show_thumb: show_images,
             show_description: show_description,
-            body: item.content_encoded
+            body: item.content_encoded,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
       </div>
       {% endfor %}
@@ -212,7 +237,9 @@
             description: item.description,
             show_thumb: show_images,
             show_description: show_description,
-            body: item.content_encoded
+            body: item.content_encoded,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
       </div>
       {% endfor %}
@@ -232,7 +259,9 @@
             description: item.description,
             show_thumb: show_images,
             show_description: show_description,
-            body: item.content
+            body: item.content,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
         {% endfor %}
         {% for item in items offset:1 limit:1 %}
@@ -242,7 +271,9 @@
             description: item.description,
             show_thumb: show_images,
             show_description: show_description,
-            body: item.content
+            body: item.content,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
           %}
         {% endfor %}
       </div>
@@ -257,7 +288,9 @@
                 body: item.content,
                 index: forloop.index, 
                 show_thumb: show_images,
-                show_description: show_description
+                show_description: show_description,
+                pixel_perfect_title: pixel_perfect_title,
+                pixel_perfect_description: pixel_perfect_description
               %}
             {% endfor %}
           </div>
@@ -282,19 +315,26 @@
       {% comment %} Hybrid layout: 2 featured items on left, compact list on right (shows 7 items total) {% endcomment %}
       {% render "layout_grid_list" 
         items: items,
+        pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+        pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
         show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
         show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
-      %}        {% when 'list' %}
+      %}        
+      {% when 'list' %}
       {% comment %} Simple vertical list with optional images and descriptions (shows up to 20 items) {% endcomment %}
       {% render "layout_list" 
         items: items,
+        pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+        pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
         show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
         show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
       %}
-        {% when 'grid' %}
+      {% when 'grid' %}
       {% comment %} Mixed grid layout: 2 featured items on top row, 3 equal items on bottom row (shows 5 items total) {% endcomment %}
       {% render "layout_grid" 
         items: items,
+        pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+        pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
         show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
         show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
       %}
@@ -302,6 +342,8 @@
       {% comment %} Balanced 2x2 grid layout: asymmetric top row, asymmetric bottom row (shows 4 items total) {% endcomment %}
       {% render "layout_grid_2" 
         items: items,
+        pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+        pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
         show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
         show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
       %}
@@ -309,12 +351,16 @@
       {% comment %} Symmetric 3x2 grid layout: 3 equal items on top row, 3 equal items on bottom row (shows 6 items total) {% endcomment %}
       {% render "layout_grid_3" 
         items: items,
+        pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+        pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
         show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
         show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
       %}      {% when 'grid_4' %}
       {% comment %} Perfect 2x2 grid layout: optimized for small screens, equal-sized quadrants (shows 4 items total) {% endcomment %}
       {% render "layout_grid_4" 
         items: items,
+        pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+        pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
         show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
         show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
       %}
@@ -323,6 +369,8 @@
       {% comment %} Default fallback layout: same as grid_list - hybrid layout with featured items and list {% endcomment %}
       {% render "layout_grid_list"
         items: items,
+        pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+        pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
         show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
         show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
       %}

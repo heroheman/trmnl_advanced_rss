@@ -32,13 +32,13 @@
         </div>
         <span class="title title--small mb--2 clamp--3 absolute text-stroke text-stroke--large"
           style="bottom: 0; left: 8px; right: 4px; display: inline;"
-          data-pixel-perfect="true">
+          {% if pixel_perfect_title %}data-pixel-perfect="true"{% endif %}>
           {{ title }}
         </span>
       </div>
   {% else %}
       <span class="title title--small mb--2 clamp--4"
-        data-pixel-perfect="true">
+        {% if pixel_perfect_title %}data-pixel-perfect="true"{% endif %}>
         {{ title }}
       </span>
   {% endif %}
@@ -66,8 +66,7 @@
         <div class="h--48 w--full image-border"></div>
       {% endif %}
       <div class="absolute"
-        style="bottom: 4px; left: 8px; right: 4px;">
-        <span 
+        style="bottom: 4px; left: 8px; right: 4px;">        <span 
         style="line-height: 1.4; display: inline-block; width: 100%;"
         class="title title--small mb--2
           {% if show_description %}
@@ -78,16 +77,16 @@
           {% if show_thumb && image_available %}
             text--white text-stroke text-stroke text-stroke--black
           {% endif %}"
-          data-pixel-perfect="true"
+          {% if pixel_perfect_title %}data-pixel-perfect="true"{% endif %}
           >
-          {{ title }}
+          {{ title }} 
         </span>
         {% if show_description %}
           <span class="text--left description clamp--3
             {% if show_thumb && image_available %}
               text--white text-stroke text-stroke--black
-          data-pixel-perfect="true"
-            {% endif %}">
+            {% endif %}"
+            {% if pixel_perfect_description %}data-pixel-perfect="true"{% endif %}>
             {% if description %}
               {{ description | strip_html | strip_newlines }}
             {% else %}
@@ -117,16 +116,15 @@
             <img class="image w--20 h--8" src="https://usetrmnl.com/images/plugins/rss.svg">
           {% endif %}
         </div>
-      {% endif %}
-      <div class="content w--auto">
+      {% endif %}      <div class="content w--auto">
         {% if show_description %}
-          <div class="title title--small clamp--1">{{ title }}</div>
+          <div class="title title--small clamp--1" {% if pixel_perfect_title %}data-pixel-perfect="true"{% endif %}>{{ title }}</div>
         {% else %}
-          <div class="title title--small clamp--3">{{ title }}</div>
+          <div class="title title--small clamp--3" {% if pixel_perfect_title %}data-pixel-perfect="true"{% endif %}>{{ title }}</div>
         {% endif %}
 
         {% if show_description %}
-          <div class="description clamp--3" data-content-limiter="true">
+          <div class="description clamp--3" data-content-limiter="true" {% if pixel_perfect_description %}data-pixel-perfect="true"{% endif %}>
             {% if description %}
               {{ description | strip_html }}
             {% else if body %}
