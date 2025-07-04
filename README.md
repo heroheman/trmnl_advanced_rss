@@ -29,8 +29,8 @@ A sophisticated RSS feed display plugin for [TRMNL](https://usetrmnl.com) e-ink 
 | ![Layout: Grid 1, Show Images, Show Description](screenshots/full_grid_images.jpg)<br>**Grid:** Show Images, Show Description | ![Layout: Grid 2, Show Images, No Description](screenshots/full_grid-2_no-description.jpg)<br>**Grid 2:** Show Images, No Description |
 | ![Layout: Grid 3, Show Images, No Description](screenshots/full_grid_3_no-description.jpg)<br>**Grid 3:** Show Images, No Description | ![Layout: Grid 4, Show Images, No Description](screenshots/full_grid_4_no-description.jpg)<br>**Grid 4:** Show Images, No Description |
 | ![Layout: Grid, No Images, Show Description](screenshots/full_grid_no-images.jpg)<br>**Grid:** No Images, Show Description | ![Layout: Grid, No Images, No Description](screenshots/full_grid_no-images_no-description.jpg)<br>**Grid:** No Images, No Description |
-| ![Layout: List, Show Images](screenshots/full_list_images.jpg)<br>**List:** Show Images | ![Layout: List, No Images](screenshots/full_list_no-images.jpg)<br>**List:** No Images |
-| ![PixelPerfect On](screenshots/full_pixelperfect_on.jpg)<br>**PixelPerfect:** True | ![PixelPerfect Off](screenshots/full_pixelperfect_off.jpg)<br>**PixelPerfect:** false |
+| ![Layout: List, Show Images](screenshots/full_list_col_1.jpg)<br>**List:** Show Images | ![Layout: List, No Images](screenshots/full_list_no-images.jpg)<br>**List:** No Images |
+| ![Layout: List 2 Columns, Show Images](screenshots/full_list_col_2.jpg)<br>**List:** Show Images | ![PixelPerfect On](screenshots/full_pixelperfect_on.jpg)<br>**PixelPerfect:** True | ![PixelPerfect Off](screenshots/full_pixelperfect_off.jpg)<br>**PixelPerfect:** false |
 
 _Screenshots taken inside trmnlp and in *v0.3.0* - there might be changes_
 
