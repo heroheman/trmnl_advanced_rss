@@ -65,10 +65,9 @@
 
 {% template media_item_cover %}
   {% assign image_available = image and image != '' %}
-
   <div class="media-item--cover w--full overflow-hidden {{ cssClasses }}">
     <div class="relative">
-      {% if show_thumb && image_available %}
+      {% if (show_thumb == true or show_thumb == 'true') and image_available %}
         <div class="h--48 image-overlay">
           <img class="cover-image image-dither" src="{{ image }}">
         </div>
@@ -79,21 +78,21 @@
         style="bottom: 4px; left: 8px; right: 4px;">        <span 
         style="line-height: 1.4; display: inline-block; width: 100%;"
         class="title title--small mb--2
-          {% if show_description %}
+          {% if show_description == true or show_description == 'true' %}
             clamp--3
           {% else %}
             clamp--7
           {% endif %}
-          {% if show_thumb && image_available %}
+          {% if (show_thumb == true or show_thumb == 'true') and image_available %}
             text--white text-stroke text-stroke text-stroke--black
-          {% endif %}"
+          {% endif %}
           {% if pixel_perfect_title %}data-pixel-perfect="true"{% endif %}
           >
           {{ title }} 
         </span>
-        {% if show_description %}
+        {% if show_description == true or show_description == 'true' %}
           <span class="text--left description clamp--3
-            {% if show_thumb && image_available %}
+            {% if (show_thumb == true or show_thumb == 'true') and image_available %}
               text--white text-stroke text-stroke--black
             {% endif %}"
             {% if pixel_perfect_description %}data-pixel-perfect="true"{% endif %}>
@@ -111,38 +110,44 @@
 
 {% template media_item %}
   {% assign image_available = image and image != '' %}
+  {% if thumb_height %}
+    {% assign thumb_height = 'h--' | append: thumb_height %}
+  {% else %}
+    {% assign thumb_height = 'h--12' %}
+  {% endif %}
+
   <div class="item {{ cssClasses }}">
-    {% if show_thumb == false %}
+    {% if show_thumb == false or show_thumb == 'false' %}
     <div class="meta">
       <span class="index">{{index}}</span>
     </div>
     {% endif  %}
     <div class="flex flex--row flex--top">
-      {% if show_thumb && image_available %}
-        <div class="h--12">
+      {% if (show_thumb == true or show_thumb == 'true') and image_available %}
+        <div class="{{ thumb_height }}">
           {% if image_available %}
-            <img class="w--20 h--auto thumb-image image-dither" src="{{ image }}">
+            <img class="w--20 h--auto thumb-image--fill image-dither" src="{{ image }}">
           {% else %}
             <img class="image w--20 h--8" src="https://usetrmnl.com/images/plugins/rss.svg">
           {% endif %}
         </div>
       {% endif %}      <div class="content w--auto">
-        {% if show_description %}
+        {% if show_description == true or show_description == 'true' %}
           <div class="title title--small clamp--1" {% if pixel_perfect_title %}data-pixel-perfect="true"{% endif %}>{{ title }}</div>
         {% else %}
           <div class="title title--small clamp--3" {% if pixel_perfect_title %}data-pixel-perfect="true"{% endif %}>{{ title }}</div>
         {% endif %}
 
-        {% if show_description %}
-          <div class="description hyphens-auto clamp--3" data-content-limiter="true" {% if pixel_perfect_description %}data-pixel-perfect="true"{% endif %}>
-            {% if description %}
-              {{ description | strip_html }}
-            {% else if body %}
-              {{ body | strip_html }}
-            {% else %}
-              no content given
-            {% endif %}
-          </div>
+        {% if show_description == true or show_description == 'true' %}
+        <div class="description hyphens-auto clamp--3" data-content-limiter="true" {% if pixel_perfect_description %}data-pixel-perfect="true"{% endif %}>
+          {% if description %}
+            {{ description | strip_html }}
+          {% else if body %}
+            {{ body | strip_html }}
+          {% else %}
+            no content given
+          {% endif %}
+        </div>
         {% endif %}
       </div>
     </div>
