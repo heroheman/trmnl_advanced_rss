@@ -6,6 +6,7 @@ static_data: ''
 polling_verb: get
 polling_url: https://rsstojson-lake.vercel.app/api/rss?url={{ rss_url }}
 polling_headers: ''
+polling_body: ''
 id: 79118
 custom_fields:
 - keyname: author_bio
