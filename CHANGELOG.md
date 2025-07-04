@@ -14,7 +14,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Update layout options and add new screenshots
-- Update changelog for version 0.3.1
 - Changelog update
 
 ### Fixed
