@@ -1,10 +1,13 @@
+
 {% template layout_list %}
   <div class="layout screen--no-bleed">
     <div class="grid">
-      <div class="list" data-list-limit="true" 
-        data-list-max-height="370" 
-        data-list-hidden-count="true"
-        data-list-max-columns="2">        {% for item in items limit:20 %}
+      <div class="list" 
+        data-list-limit="true" 
+        data-list-max-height="400" 
+        data-list-hidden-count="false"
+        data-list-max-columns="1">        
+        {% for item in items limit:20 %}
           {% render "media_item", 
             cssClasses: "pr--4",
             title: item.title, 
@@ -13,6 +16,34 @@
             index: forloop.index, 
             body: item.content,
             show_thumb: show_images,
+            thumb_height: '16',
+            show_description: show_description,
+            pixel_perfect_title: pixel_perfect_title,
+            pixel_perfect_description: pixel_perfect_description
+          %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endtemplate %}
+
+{% template layout_list_col_2 %}
+  <div class="layout screen--no-bleed">
+    <div class="grid">
+      <div class="list" data-list-limit="true" 
+        data-list-max-height="400" 
+        data-list-hidden-count="false"
+        data-list-max-columns="2">        
+        {% for item in items limit:20 %}
+          {% render "media_item", 
+            cssClasses: "pr--4",
+            title: item.title, 
+            image: item.preview_url
+            description: item.description,
+            index: forloop.index, 
+            body: item.content,
+            show_thumb: show_images,
+            thumb_height: '16',
             show_description: show_description,
             pixel_perfect_title: pixel_perfect_title,
             pixel_perfect_description: pixel_perfect_description
@@ -329,6 +360,16 @@
         show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
         show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
       %}
+      {% when 'list_col_2' %}
+      {% comment %} Vertical list with 2 columns, compact layout (shows up to 20 items) {% endcomment %}
+      {% render "layout_list_col_2" 
+        items: items,
+        pixel_perfect_title: trmnl.plugin_settings.custom_fields_values.title_pixel_perfect,
+        pixel_perfect_description: trmnl.plugin_settings.custom_fields_values.description_pixel_perfect
+        show_images: trmnl.plugin_settings.custom_fields_values.show_images_full,
+        show_description: trmnl.plugin_settings.custom_fields_values.show_description_full
+      %}
+
       {% when 'grid' %}
       {% comment %} Mixed grid layout: 2 featured items on top row, 3 equal items on bottom row (shows 5 items total) {% endcomment %}
       {% render "layout_grid" 

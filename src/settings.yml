@@ -30,7 +30,8 @@ custom_fields:
   - Grid 2 - Balanced 2x2 asymmetric layout (4 items): grid_2
   - Grid 3 - Symmetric 3x2 grid (6 items): grid_3
   - Grid 4 - Perfect 2x2 grid (4 items): grid_4
-  - List - Simple vertical list (20 items): list
+  - List - Simple vertical list (max. 20 items): list
+  - List 2 Column - Vertical list with 2 columns (max. 20 items): list_col_2
   - Hybrid - Hybrid with featured items + compact list (5-7 items): grid_list
   default: grid_list
 - keyname: display_mode_half
