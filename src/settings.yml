@@ -29,7 +29,7 @@ custom_fields:
   options:
   - Grid 1 - Mixed grid with 2 featured + 3 equal items (5 total): grid
   - Grid 2 - Balanced 2x2 asymmetric layout (4 items): grid_2
-  - Grid 3 - Symmetric 3x2 grid (6 items): grid_3
+  - Grid 3 - Symmetric 3x3 grid (6 items): grid_3
   - Grid 4 - Perfect 2x2 grid (4 items): grid_4
   - List - Simple vertical list (max. 20 items): list
   - List 2 Column - Vertical list with 2 columns (max. 20 items): list_col_2

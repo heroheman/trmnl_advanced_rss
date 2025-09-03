@@ -34,6 +34,10 @@ A sophisticated RSS feed display plugin for [TRMNL](https://usetrmnl.com) e-ink 
 
 _Screenshots taken inside trmnlp and in *v0.3.0* - there might be changes_
 
+## Local Development
+- install [TRMNLP](https://github.com/usetrmnl/trmnlp)
+- `trmmnlp serve` to start a local server
+
 ## Links
 
 - https://usetrmnl.com/recipes
@@ -48,6 +52,7 @@ _Screenshots taken inside trmnlp and in *v0.3.0* - there might be changes_
 
 #### Design Framework
 - https://usetrmnl.com/framework
+- https://github.com/usetrmnl/trmnlp
 
 #### Template Language: 
 - https://shopify.github.io/liquid/

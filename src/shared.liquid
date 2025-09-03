@@ -34,37 +34,39 @@
 </style>
 
 {% template media_item_large %}
+  <!--Media Item: large -->
   {% if image != '' %}
     <div class="media-item--large {{ cssClasses }}">
       <div class="relative">
         <div class="h--36 mb--2">
           <img class="feature-image image-dither" src="{{ image }}">
         </div>
-        <span class="title title--small mb--2 clamp--3 absolute text-stroke text-stroke--large"
+        <div data-clamp="3" class="title title--small mb--2 absolute text-stroke text-stroke--large"
           style="bottom: 0; left: 8px; right: 4px; display: inline;"
           {% if pixel_perfect_title %}data-pixel-perfect="true"{% endif %}>
           {{ title }}
-        </span>
+        </div>
       </div>
   {% else %}
-      <span class="title title--small mb--2 clamp--4"
+      <div data-clamp="4" class="title title--small mb--2"
         {% if pixel_perfect_title %}data-pixel-perfect="true"{% endif %}>
         {{ title }}
-      </span>
+      </div>
   {% endif %}
 
-      <span class="text--left description clamp--12">
+      <div data-clamp="12" class="text--left description">
         {% if description %}
           {{ description | strip_html | strip_newlines }}
         {% else %}
           {{ content | strip_html | strip_newlines }}
         {% endif %}
-      </span>
+      </div>
     </div>
 {% endtemplate %}
 
 {% template media_item_cover %}
   {% assign image_available = image and image != '' %}
+  <!--Media Item: cover -->
   <div class="media-item--cover w--full overflow-hidden {{ cssClasses }}">
     <div class="relative">
       {% if (show_thumb == true or show_thumb == 'true') and image_available %}
@@ -74,24 +76,26 @@
       {% else %}
         <div class="h--48 w--full image-border"></div>
       {% endif %}
-      <div class="absolute"
-        style="bottom: 4px; left: 8px; right: 4px;">        <span 
-        style="line-height: 1.4; display: inline-block; width: 100%;"
-        class="title title--small mb--2
-          {% if show_description == true or show_description == 'true' %}
-            clamp--3
-          {% else %}
-            clamp--7
-          {% endif %}
+      <div class="absolute" style="bottom: 4px; left: 8px; right: 4px;">        
+        <div style="line-height: 1.4; display: inline-block; width: 100%;"
+          class="title title--small mb--2
           {% if (show_thumb == true or show_thumb == 'true') and image_available %}
             text--white text-stroke text-stroke text-stroke--black
+          {% endif %}
+          "
+          {% if show_description == true or show_description == 'true' %}
+            data-clamp="3"
+          {% else %}
+            data-clamp="7"
           {% endif %}
           {% if pixel_perfect_title %}data-pixel-perfect="true"{% endif %}
           >
           {{ title }} 
-        </span>
-        {% if show_description == true or show_description == 'true' %}
-          <span class="text--left description clamp--3
+        </div>
+        {% comment %} {% if show_description == true or show_description == 'true' %}
+          <div data-clamp="3" 
+            style="width: 100%; display: inline-block;"
+            class="text--left description
             {% if (show_thumb == true or show_thumb == 'true') and image_available %}
               text--white text-stroke text-stroke--black
             {% endif %}"
@@ -101,14 +105,15 @@
             {% else %}
               {{ content | strip_html | strip_newlines }}
             {% endif %}
-          </span>
-        {% endif %}
+          </div>
+        {% endif %} {% endcomment %}
       </div>
     </div>
   </div>
 {% endtemplate %}
 
 {% template media_item %}
+  <!--Media Item: default -->
   {% assign image_available = image and image != '' %}
   {% if thumb_height %}
     {% assign thumb_height = 'h--' | append: thumb_height %}
@@ -124,28 +129,34 @@
     {% endif  %}
     <div class="flex flex--row flex--top">
       {% if (show_thumb == true or show_thumb == 'true') and image_available %}
-        <div class="{{ thumb_height }}">
+        <div class="{{ thumb_height }} aspect--4/3">
           {% if image_available %}
             <img class="w--20 h--auto thumb-image--fill image-dither" src="{{ image }}">
           {% else %}
             <img class="image w--20 h--8" src="https://usetrmnl.com/images/plugins/rss.svg">
           {% endif %}
         </div>
-      {% endif %}      <div class="content w--auto">
+      {% endif %}      
+      <div class="content w--auto">
         {% if show_description == true or show_description == 'true' %}
-          <div class="title title--small clamp--1" {% if pixel_perfect_title %}data-pixel-perfect="true"{% endif %}>{{ title }}</div>
+          <div class="title title--small" >
+            {{ title }}
+          </div>
         {% else %}
-          <div class="title title--small clamp--3" {% if pixel_perfect_title %}data-pixel-perfect="true"{% endif %}>{{ title }}</div>
+          <div class="title title--small"
+          {% if pixel_perfect_title %}data-pixel-perfect="true"{% endif %}>
+            {{ title }}
+            </div>
         {% endif %}
 
         {% if show_description == true or show_description == 'true' %}
-        <div class="description hyphens-auto clamp--3" data-content-limiter="true" {% if pixel_perfect_description %}data-pixel-perfect="true"{% endif %}>
+        <div data-clamp="2" class="description hyphens-auto" 
+        >
           {% if description %}
-            {{ description | strip_html }}
+            {{ description | strip_html | strip_newlines }}
           {% else if body %}
             {{ body | strip_html }}
           {% else %}
-            no content given
           {% endif %}
         </div>
         {% endif %}
