@@ -7,19 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.3.4] - 2025-09-03
 
-### Added
-
-- Add polling_body to settings.yml
-
-### Changed
-
-- Changelog update
-
 ### Fixed
 
 - Prepare v2 framework upgrade
-- Update plugin description for version 0.3.3
-- Update changelog for version 0.3.1
 
 ## [0.3.3] - 2025-07-04
 
