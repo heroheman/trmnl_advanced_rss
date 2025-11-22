@@ -4,7 +4,7 @@ no_screen_padding: 'no'
 dark_mode: 'no'
 static_data: ''
 polling_verb: get
-polling_url: https://rsstojson-lake.vercel.app/api/rss?url={{ rss_url }}
+polling_url: https://rsstojson-lake.vercel.app/api/rss?url={{ rss_url | url_encode }}
 polling_headers: ''
 polling_body: ''
 id: 79118
