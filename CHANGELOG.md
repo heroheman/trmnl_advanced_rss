@@ -5,11 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2026-02-05
+
+### Added
+
+- Add transform function for RSS payload reduction
+
+### Changed
+
+- Changelog update
+
+### Fixed
+
+- Update plugin description for v0.3.4
+
 ## [0.3.4] - 2025-09-03
+
+### Added
+
+- Add polling_body to settings.yml
+
+### Changed
+
+- Changelog update
 
 ### Fixed
 
 - Prepare v2 framework upgrade
+- Update plugin description for version 0.3.3
+- Update changelog for version 0.3.1
 
 ## [0.3.3] - 2025-07-04
 
@@ -128,6 +152,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial commit
 
+[0.4.0]: https://github.com/heroheman/trmnl_advanced_rss/compare/v0.3.4..v0.4.0
 [0.3.4]: https://github.com/heroheman/trmnl_advanced_rss/compare/v0.3.3..v0.3.4
 [0.3.3]: https://github.com/heroheman/trmnl_advanced_rss/compare/v0.3.1..v0.3.3
 [0.3.1]: https://github.com/heroheman/trmnl_advanced_rss/compare/v0.3.0..v0.3.1
