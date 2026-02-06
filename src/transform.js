@@ -58,26 +58,26 @@ function transform(input) {
   function reduceItem(item) {
     return {
       title: item.title || "",
-      preview_url: item.preview_url || item.thumbnail || item.image || "",
+      preview_url: item.preview_url || item.thumbnail || item.image || item.media_thumbnail_url || "",
       description: cleanAndTruncate(item.description, 300),
-      content: cleanAndTruncate(item.content || item.content_encoded || item.description, 500)
+      content: cleanAndTruncate(item.content || item.description, 500),
+      content_encoded: cleanAndTruncate(item.content_encoded || item.content || item.description, 500)
     };
   }
 
-  // Erstelle reduziertes Objekt
-  const reduced = {
+  // Erstelle reduziertes Objekt und gib es direkt zurück
+  // Die Liquid Templates erwarten die Felder direkt im Root (items, status, title, etc.)
+  // Die API gibt Feed-Daten direkt im Root zurück, nicht unter einem "feed" Objekt
+  return {
     status: input.status || "success",
     message: input.message || "",
-    title: input.title || (input.feed ? input.feed.title : "") || "",
-    description: cleanAndTruncate(input.description || (input.feed ? input.feed.description : "") || "", 200),
+    title: input.title || "",
+    description: cleanAndTruncate(input.description || "", 200),
+    link: input.link || "",
     feed: {
-      image: input.feed ? (input.feed.image || "") : ""
+      image: input.image || input.feed?.image || ""
     },
     // Limitiere auf maximal 20 Items und reduziere jedes Item
     items: (input.items || []).slice(0, 20).map(reduceItem)
-  };
-
-  return {
-    data: reduced
   };
 }
