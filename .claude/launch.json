@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "trmnlp",
+      "runtimeExecutable": "trmnlp",
+      "runtimeArgs": ["serve"],
+      "port": 4567
+    }
+  ]
+}
