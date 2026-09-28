@@ -65,6 +65,10 @@ function transform(input) {
     };
   }
 
+  // RSS <channel><image> kommt als Objekt {url, title, link} – Liquid würde es als
+  // Ruby-Hash in <img src> rendern und das Tag sprengen (Issue #3). Nur die URL nehmen.
+  const feedImage = input.image || input.feed?.image;
+
   // Erstelle reduziertes Objekt und gib es direkt zurück
   // Die Liquid Templates erwarten die Felder direkt im Root (items, status, title, etc.)
   // Die API gibt Feed-Daten direkt im Root zurück, nicht unter einem "feed" Objekt
@@ -75,7 +79,7 @@ function transform(input) {
     description: cleanAndTruncate(input.description || "", 200),
     link: input.link || "",
     feed: {
-      image: input.image || input.feed?.image || ""
+      image: typeof feedImage === "string" ? feedImage : feedImage?.url || ""
     },
     // Limitiere auf maximal 20 Items und reduziere jedes Item
     items: (input.items || []).slice(0, 20).map(reduceItem)
