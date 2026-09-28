@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.2] - 2026-09-28
+
+### Added
+
+- Add URL encode to RSS URL
+- Add category field to author_bio
+
+### Changed
+
+- Bump Ruby to 4.0.7 for trmnlp 0.12 and add preview launch config
+- Merge pull request #2 from blueset/patch-1
+- Changelog update
+
+### Fixed
+
+- Update plugin description for v0.4.2
+- Replace broken default feed with NYT Top Stories
+- Resolve problem with images in feed
+- Update plugin description date for v0.4.1
+
 ## [0.4.1] - 2026-02-06
 
 ### Changed
@@ -163,6 +183,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial commit
 
+[0.4.2]: https://github.com/heroheman/trmnl_advanced_rss/compare/v0.4.1..v0.4.2
 [0.4.1]: https://github.com/heroheman/trmnl_advanced_rss/compare/v0.4.0..v0.4.1
 [0.4.0]: https://github.com/heroheman/trmnl_advanced_rss/compare/v0.3.4..v0.4.0
 [0.3.4]: https://github.com/heroheman/trmnl_advanced_rss/compare/v0.3.3..v0.3.4
