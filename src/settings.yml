@@ -22,7 +22,7 @@ custom_fields:
   name: RSS Feed
   description: Enter your RSS Feed URL
   placeholder: Link to your RSS / XML Feed
-  default: https://cdn.flore.nz/example_feed.xml
+  default: https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
 - keyname: display_mode_full
   name: "(FULL) Layout Mode"
   description: For Feature Grid - the feed items should have a thumbnail value attribute
